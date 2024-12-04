@@ -91,6 +91,10 @@ header nav ul li {
     display: inline-block;
 }
 
+header nav ul li a {
+    position: relative;
+}
+
 header nav ul li.btn a {
     border: 1px solid #464646;
     border-radius: 20px;
@@ -109,15 +113,34 @@ header nav ul li.btn a:hover {
     border: 1px solid #fff;
 }
 
-header nav ul li.active::after {
+header nav ul li:not(.btn) a::before {
     content: '';
-    display: block;
-    width: 60px;
+    /* display: block; */
+    width: 0px;
     height: 5px;
     background-color: #B9FF66;
     border-radius: 10px;
-    position: relative;
-    top: 7px;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    transition: all 500ms;
+}
+
+header nav ul li:not(.btn).active a::before {
+    content: '';
+    width: 40px;
+    height: 5px;
+    background-color: #B9FF66;
+    border-radius: 10px;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    transition: all 500ms;
+}
+
+header nav ul li:hover a::before {
+    width: 40px;
+    transform: translateX(100%);
 }
 
 .hero {
@@ -251,7 +274,7 @@ header nav ul li.active::after {
 }
 
 .plan {
-    background: url('/img/BG.png') no-repeat center center fixed;
+    background: url('/img/BG.png') no-repeat center fixed;
     background-size: cover;
     padding: 80px 0;
 }
@@ -284,4 +307,93 @@ header nav ul li.active::after {
     font-size: 20px;
     color: #fff;
     padding-top: 20px;
+}
+
+footer {
+    background: #070707;
+    padding-bottom: 50px;
+}
+
+footer .footer-elems {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    width: 1440px;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.f-img {
+    width: 40px;
+}
+
+footer p {
+    color: #fff;
+}
+
+.poly-logo-footer {
+    display: block;
+    width: 200px;
+    height: 100%;
+}
+
+footer .footer-elems .links {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding: 10px 0;
+}
+
+footer h4 {
+    color: #111;
+    background: #B9FF66;
+    padding: 2px 5px;
+    display: block;
+    width: 85px;
+    border-radius: 10px;
+}
+
+#f-p2 {
+    margin-top: 10px;
+}
+
+footer .footer-elems .info {
+    width: 300px;
+}
+
+footer .footer-elems .email {
+    background: #464646;
+    border-radius: 20px;
+    align-content: center;
+}
+
+footer .footer-elems .email .padding {
+    padding: 0 30px;
+}
+
+footer .footer-elems .email .padding input {
+    width: 300px;
+    height: 50px;
+    padding: 0 20px;
+    background: #464646;
+    border: #fff solid 1px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+footer .footer-elems .email .padding button {
+    background: #B9FF66;
+    padding: 20px 30px;
+    border-radius: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+footer hr {
+    margin: 50px 0;
+    border-radius: 1px;
 }
