@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -21,6 +22,11 @@ img {
     max-height: 100%;
 }
 
+.img-svg path { 
+    fill: #fff; 
+    /* stroke: inherit;  */
+}
+
 .wrapper {
     background: linear-gradient(rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
     width: 100%;
@@ -33,33 +39,29 @@ img {
 }
 
 header {
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
-.header-fixed {
-    position: fixed;
-    background-color: rgb(26, 26, 26);
-    padding: 50px 1440px;
+.header1 {
+    background: #fff;
+    position: sticky;
     top: 0;
-    transition: all 300ms ease;
+    left: 10%;
+    z-index: 100;
+    display: block;
+    transition: 300ms ease;
+}
+
+.header-scrolled {
+    background: #070707; 
+    /* rgb(26, 26, 26) */
+    transition: all 500ms ease;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar-fixed {
-    position: absolute;
-    top: 30px;
-    width: 1440px;
-    left: 232px;
-    transition: all 500ms ease;
-}
-
-.nav-item-fixed {
-    color: #fff;
 }
 
 /* .scrolled {
@@ -79,23 +81,31 @@ header {
 header nav {
     float: right;
     width: 60%;
+    position: relative;
+    top: 10px;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    transition: 300ms ease;
 }
 
 header nav ul li {
     display: inline-block;
 }
 
+.li-elem-scrolled {
+    color: #fff;
+    transition: 300ms ease;
+}
+
 header nav ul li a {
     position: relative;
 }
 
-header nav ul li.btn a {
+.nav-btn {
     border: 1px solid #464646;
     border-radius: 20px;
     padding: 20px 40px;
@@ -103,9 +113,27 @@ header nav ul li.btn a {
     transition: all 500ms ease;
 }
 
+.nav-btn-scrolled {
+    border: 1px solid #fff;
+    color: #fff;
+    transition: all 500ms ease;
+    border-radius: 20px;
+    padding: 20px 40px;
+}
+
+.nav-btn-scrolled:hover {
+    background: #fff;
+    transition: 300ms ease;
+    color: #070707;
+}
+
 header nav ul li.btn a:hover {
     background: #464646;
     color: #fff;
+}
+
+.btn-nav-scrolled:hover {
+    background: #fff;
 }
 
 .nav-item-btn-fixed {

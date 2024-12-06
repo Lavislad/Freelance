@@ -7,26 +7,28 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="header1">
         <header>
             <div class="container">
-                <span><img src="img/Logo.png" alt=""></span>
+                <span><img src="css/Logo.svg" alt="" class="img-svg"></span>
                 <nav>
                     <ul>
-                        <li class="active"><a href="#" class="active"></a>Main</li>
+                        <li class="active"><a href="#"></a>Main</li>
                         <li class=""><a href="#"></a>News</li>
                         <li class=""><a href="#"></a>Feedback</li>
-                    <li class="btn"><a href="#">Log in</a></li>
+                        <li class="btn"><a href="#" class="nav-btn">Log in</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
+    </div>
+    <div class="wrapper">
         <div class="container">
             <div class="hero">
                 <div class="hero--1">
                     <h1 class="hero--info hero--h1">Find the job of your dream</h1>
                     <h2 class="hero--info hero--h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non accusantium explicabo, quidem itaque voluptate ipsa iusto suscipit quam. Maxime quasi nulla quos ratione dicta et consequatur ipsa nesciunt culpa?</h2>
-                    <a href="#" class="hero--btn">Get started</a>
+                    <a href="#get-started" class="hero--btn">Get started</a>
                 </div>
                 <img src="img/Illustration.png" alt="">
             </div>
@@ -36,7 +38,7 @@
 
     </div>
 
-    <div class="plan">
+    <div class="plan" id="get-started">
         <h3>Your plan is</h3>
         <div class="items">
             <div class="item">
@@ -141,5 +143,65 @@
             <p>© 2024 Positivus. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+        document.querySelector('.header1').classList.toggle('header-scrolled', window.scrollY > 50);
+        });
+
+        window.addEventListener('scroll', () => {
+        document.querySelector('header nav ul').classList.toggle('li-elem-scrolled', window.scrollY > 50);
+        });
+
+        window.addEventListener('scroll', function() {
+        if (pageYOffset > 50) {
+            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled')
+            document.querySelector('header nav ul li.btn a').classList.remove('header nav ul li.btn a')
+            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled:hover')
+        } else {
+            document.querySelector('header nav ul li.btn a').classList.remove('nav-btn-scrolled')
+        }
+        })
+        
+        // let header = $('header nav ul li.btn a'),
+        //     intro = $('.intro');
+        
+        // window.addEventListener('scroll', function() {
+        // if(pageYOffset > 50) {
+        // header.addClass('btn-nav-scrolled');
+        // } else {
+        // header.removeClass('btn-nav-scrolled');
+        // }
+        // });
+
+
+
+        window.addEventListener('scroll', () => {
+        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
+        });
+
+        window.addEventListener('scroll', () => {
+        document.querySelector('header nav ul').classList.toggle('header nav ul', window.scrollY > 50);
+        });
+
+
+
+        $("img.img-svg").each(function () {
+            var $img = $(this);
+            var imgClass = $img.attr("class");
+            var imgURL = $img.attr("src");
+            $.get(imgURL, function (data) {
+                var $svg = $(data).find("svg");
+                if (typeof imgClass !== "undefined") {
+                    $svg = $svg.attr("class", imgClass + " replaced-svg");
+                }
+                $svg = $svg.removeAttr("xmlns:a");
+                if (!$svg.attr("viewBox") && $svg.attr("height") && $svg.attr("width")) {
+                    $svg.attr("viewBox", "0 0 " + $svg.attr("height") + " " + $svg.attr("width"))
+                }
+                $img.replaceWith($svg);
+            }, "xml");
+        });
+    </script>
 </body>
 </html>
