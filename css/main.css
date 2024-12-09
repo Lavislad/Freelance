@@ -94,6 +94,8 @@ header nav ul {
 
 header nav ul li {
     display: inline-block;
+    cursor: pointer;
+
 }
 
 .li-elem-scrolled {
@@ -173,7 +175,7 @@ header nav ul li:hover a::before {
 
 .hero {
     /* width: 40%; */
-    margin-top: 100px;
+    margin-top: 120px;
     display: flex;
     justify-content: space-between;
 }
@@ -265,6 +267,7 @@ header nav ul li:hover a::before {
     transition: all 500ms ease;
     margin: 0 20px;
     margin-bottom: 70px;
+    cursor: pointer;
 }
 
 .filters .one-filter:hover {
