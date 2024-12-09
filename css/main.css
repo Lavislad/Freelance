@@ -11,6 +11,7 @@
 body {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
+    font-size: 16px;
 }
 
 a {
@@ -90,6 +91,7 @@ header nav ul {
     display: flex;
     justify-content: space-between;
     transition: 300ms ease;
+    cursor: pointer;
 }
 
 header nav ul li {
@@ -103,9 +105,11 @@ header nav ul li {
 
 header nav ul li a {
     position: relative;
+    color: #070707;
 }
 
-.nav-btn {
+.nav-btn,
+.hero--login .elem .btn {
     border: 1px solid #464646;
     border-radius: 20px;
     padding: 20px 40px;
@@ -127,7 +131,8 @@ header nav ul li a {
     color: #070707;
 }
 
-header nav ul li.btn a:hover {
+header nav ul li.btn a:hover,
+.hero--login .elem .btn:hover {
     background: #464646;
     color: #fff;
 }
@@ -173,7 +178,7 @@ header nav ul li:hover a::before {
 
 .hero {
     /* width: 40%; */
-    margin-top: 100px;
+    margin-top: 120px;
     display: flex;
     justify-content: space-between;
 }
@@ -265,6 +270,7 @@ header nav ul li:hover a::before {
     transition: all 500ms ease;
     margin: 0 20px;
     margin-bottom: 70px;
+    cursor: pointer;
 }
 
 .filters .one-filter:hover {
@@ -336,6 +342,57 @@ header nav ul li:hover a::before {
     color: #fff;
     padding-top: 20px;
 }
+
+.hero--login {
+    height: auto;
+    border-radius: 20px;
+    background: rgb(236, 236, 236);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero--login .elem {
+    margin: 70px;
+    width: 500px;
+}
+
+.hero--login label {
+    color: #4F4F4F;
+}
+
+.hero--login textarea {
+    display: block;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    width: 93.4%;
+    height: 20px;
+    border: #070707 1px solid;
+    border-radius: 10px;
+    padding: 16px;
+    outline: none;
+    resize: none;
+    cursor: text;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+}
+
+.hero--login .elem .btn {
+    width: 100%;
+    font-size: 18px;
+}
+
+.hero--login .elem p {
+    margin-top: 10px;
+}
+
+.hero--login img {
+    float: right;
+    position: relative;
+    height: 450px;
+}
+
+/* Footer */
 
 footer {
     background: #070707;

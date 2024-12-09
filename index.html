@@ -16,7 +16,7 @@
                         <li class="active"><a href="#"></a>Main</li>
                         <li class=""><a href="#"></a>News</li>
                         <li class=""><a href="#"></a>Feedback</li>
-                        <li class="btn"><a href="#" class="nav-btn">Log in</a></li>
+                        <li class="btn"><a href="login.html" class="nav-btn">Log in</a></li>
                     </ul>
                 </nav>
             </div>
@@ -162,19 +162,6 @@
             document.querySelector('header nav ul li.btn a').classList.remove('nav-btn-scrolled')
         }
         })
-        
-        // let header = $('header nav ul li.btn a'),
-        //     intro = $('.intro');
-        
-        // window.addEventListener('scroll', function() {
-        // if(pageYOffset > 50) {
-        // header.addClass('btn-nav-scrolled');
-        // } else {
-        // header.removeClass('btn-nav-scrolled');
-        // }
-        // });
-
-
 
         window.addEventListener('scroll', () => {
         document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
