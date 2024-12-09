@@ -363,7 +363,8 @@ header nav ul li:hover a::before {
     color: #4F4F4F;
 }
 
-.hero--login textarea {
+.hero--login textarea,
+.hero--login input {
     display: block;
     margin-bottom: 50px;
     margin-top: 10px;
