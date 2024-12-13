@@ -181,12 +181,15 @@ header nav ul li:hover a::before {
 .hero {
     /* width: 40%; */
     margin-top: 120px;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
 }
 
-.hero-fixed {
-    margin-top: 250px;
+.hero img {
+    float: right;
+    margin: -250px 0;
+    /* position: relative;
+    top: -200px; */
 }
 
 .hero--1 {
@@ -194,7 +197,8 @@ header nav ul li:hover a::before {
 }
 
 .hero--info {
-    padding-bottom: 80px;
+    margin-bottom: 80px;
+    width: 40%;
 }
 
 .hero--h1 {
@@ -225,7 +229,9 @@ header nav ul li:hover a::before {
 }
 
 .poly-logo {
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-top: 120px;
+    margin-bottom: 20px;
     display: block;
     width: 200px;
 }
@@ -484,4 +490,61 @@ footer .footer-elems .email .padding button {
 footer hr {
     margin: 50px 0;
     border-radius: 1px;
+}
+
+
+@media (max-width: 1440px) {
+    .container {
+        width: 80%;
+    }
+
+    .hero--1 {
+        width: 100%;
+    }
+
+    .hero img {
+        float: right;
+        position: relative;
+        display: block;
+    }
+
+    .hero {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 1080px) {
+    img {
+        max-width: 90vw;
+    }
+    .container {
+        width: 90%;
+    }
+
+    .hero--1 {
+        width: 100%;
+    }
+
+    .hero img {
+        float: left;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .hero .hero--info {
+        width: 100%;
+        display: block;
+    }
+
+    .hero {
+        margin-top: 40px;
+    }
+
+    .hero--h2 {
+        margin-top: 120px;
+    }
+
+    .hero--btn {
+        margin: 0 auto;
+    }
 }
