@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Log in{% endblock %}
+{% block active %}
+    <li class=""><a href="{% url 'index' %}">Main</a></li>
+    <li class=""><a href="#">News</a></li>
+    <li class=""><a href="#">Feedback</a></li>
+    <li class="btn"><a href="#" class="nav-btn">Log in</a></li>
+{% endblock %}
+{% block content %}
+    <div class="wrapper p-240">
+        <div class="big-text container">
+            <h3>Log in</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis id cum in illum consectetur dicta non nobis molestias voluptates iusto earum minus similique cumque facilis, maiores odit totam asperiores eveniet!</p>
+        </div>
+        <div class="hero--login container">
+            <form class="elem">
+                <label>Enter email</label>
+                <textarea placeholder="Email"></textarea>
+                <label>Enter password</label>
+                <textarea placeholder="Password"></textarea>
+                <button class="btn">Log in</button>
+                <p>Don't have an account? <span><a href="{% url 'register' %}">Register</a></span></p>
+            </form>
+            <img src="{% static 'main/img/Illustration-login.svg' %}" alt="">
+        </div>
+    </div>
+{% endblock %}

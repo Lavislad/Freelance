@@ -1,49 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/df8e014d3f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="header1">
-        <header>
-            <div class="container">
-                <span><img src="css/Logo.svg" alt="" class="img-svg"></span>
-                <nav>
-                    <ul>
-                        <li class=""><a href="index.html">Main</a></li>
-                        <li class=""><a href="">News</a></li>
-                        <li class=""><a href="#">Feedback</a></li>
-                        <li class="btn"><a href="#" class="nav-btn">Log in</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <header class="container">
+            <span><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg"></span>
+            <input type="checkbox" name="menu" id="menu">
+            <label for="menu"><i class="fa-solid fa-bars"></i></label>
+            <nav>
+                <ul>
+                    {% block active %}
+
+                    {% endblock %}
+                </ul>
+            </nav>
         </header>
     </div>
-    
-    <div class="wrapper">
-        <div class="big-text container">
-            <h3>Log in</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis id cum in illum consectetur dicta non nobis molestias voluptates iusto earum minus similique cumque facilis, maiores odit totam asperiores eveniet!</p>
-        </div>
-        <div class="hero--login container">
-            <form class="elem">
-                <label>Enter email</label>
-                <textarea placeholder="Email"></textarea>
-                <label>Enter password</label>
-                <textarea placeholder="Password"></textarea>
-                <button class="btn">Log in</button>
-                <p>Don't have an account? <span><a href="Register.html">Register</a></span></p>
-            </form>
-            <img src="img/Illustration-login.svg" alt="">
-        </div>
-    </div>
+
+    {% block content %}
+
+    {% endblock %}
 
     <footer>
         <div class="footer-elems container">
-            <img src="img/white_logo.png" alt="" class="poly-logo-footer">
+            <img src="{% static 'main/img/white_logo.png' %}" alt="" class="poly-logo-footer">
             <div class="links">
                 <a href="#"><p>About us</p></a>
                 <a href="#"><p>Services</p></a>
@@ -52,7 +39,7 @@
                 <a href="#"><p>Blog</p></a>
             </div>
             <div>
-                <a href="#"><img src="img/vk_logo.svg" alt="" class="f-img"></a>
+                <a href="#"><img src="{% static 'main/img/vk_logo.svg' %}" alt="" class="f-img"></a>
             </div>
         </div>
         <div class="footer-elems container">
@@ -122,3 +109,4 @@
         });
     </script>
 </body>
+</html>
