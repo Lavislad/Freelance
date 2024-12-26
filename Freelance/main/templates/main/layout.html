@@ -15,7 +15,7 @@
             <input type="checkbox" name="menu" id="menu">
             <label for="menu"><i class="fa-solid fa-bars"></i></label>
             <nav>
-                <ul>
+                <ul class="nav-ul">
                     <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %}"><a href="{% url 'news_index' %}">News</a></li>
                     <li class="{% if title == 'Feedback' %}active{% endif %}"><a href="#">Feedback</a></li>
@@ -63,51 +63,42 @@
         </div>
     </footer>
 
-    <script>
-        window.addEventListener('scroll', () => {
-        document.querySelector('.header1').classList.toggle('header-scrolled', window.scrollY > 50);
-        });
+<!--    <script>-->
+<!--        window.addEventListener('scroll', () => {-->
+<!--        document.querySelector('.header1').classList.toggle('header-scrolled', window.scrollY > 50);-->
+<!--        });-->
 
-        window.addEventListener('scroll', () => {
-        document.querySelector('header nav ul').classList.toggle('li-elem-scrolled', window.scrollY > 50);
-        });
+<!--        window.addEventListener('scroll', () => {-->
+<!--        document.querySelector('nav-ul').classList.toggle('li-elem-scrolled', window.scrollY > 50);-->
+<!--        });-->
 
-        window.addEventListener('scroll', function() {
-        if (pageYOffset > 50) {
-            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled')
-            document.querySelector('header nav ul li.btn a').classList.remove('header nav ul li.btn a')
-            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled:hover')
-        } else {
-            document.querySelector('header nav ul li.btn a').classList.remove('nav-btn-scrolled')
-        }
-        })
+<!--//        window.addEventListener('scroll', function() {-->
+<!--//        if (pageYOffset > 50) {-->
+<!--//            document.querySelector('header nav ul').classList.add('li-elem-scrolled')-->
+<!--//            document.querySelector('header nav ul').classList.remove('header nav ul li.btn a')-->
+<!--//            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled:hover')-->
+<!--//        } else {-->
+<!--//            document.querySelector('header nav ul').classList.remove('li-elem-scrolled')-->
+<!--//        }-->
+<!--//        })-->
 
-        window.addEventListener('scroll', () => {
-        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
-        });
+<!--        window.addEventListener('scroll', function() {-->
+<!--        if (pageYOffset > 50) {-->
+<!--            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled')-->
+<!--            document.querySelector('header nav ul li.btn a').classList.remove('header nav ul li.btn a')-->
+<!--            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled:hover')-->
+<!--        } else {-->
+<!--            document.querySelector('header nav ul li.btn a').classList.remove('nav-btn-scrolled')-->
+<!--        }-->
+<!--        })-->
 
-        window.addEventListener('scroll', () => {
-        document.querySelector('header nav ul').classList.toggle('header nav ul', window.scrollY > 50);
-        });
+<!--        window.addEventListener('scroll', () => {-->
+<!--        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);-->
+<!--        });-->
 
-
-
-        $("img.img-svg").each(function () {
-            var $img = $(this);
-            var imgClass = $img.attr("class");
-            var imgURL = $img.attr("src");
-            $.get(imgURL, function (data) {
-                var $svg = $(data).find("svg");
-                if (typeof imgClass !== "undefined") {
-                    $svg = $svg.attr("class", imgClass + " replaced-svg");
-                }
-                $svg = $svg.removeAttr("xmlns:a");
-                if (!$svg.attr("viewBox") && $svg.attr("height") && $svg.attr("width")) {
-                    $svg.attr("viewBox", "0 0 " + $svg.attr("height") + " " + $svg.attr("width"))
-                }
-                $img.replaceWith($svg);
-            }, "xml");
-        });
-    </script>
+<!--        window.addEventListener('scroll', () => {-->
+<!--        document.querySelector('header nav ul').classList.toggle('header nav ul', window.scrollY < 50);-->
+<!--        });-->
+<!--    </script>-->
 </body>
 </html>

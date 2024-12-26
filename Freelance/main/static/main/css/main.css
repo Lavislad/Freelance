@@ -65,6 +65,7 @@ header {
     left: 0;
     z-index: 100;
     transition: 300ms ease;
+    border-bottom: 0.6px solid #070707;
 }
 
 .header-scrolled {
@@ -108,10 +109,17 @@ header nav ul {
     cursor: pointer;
 }
 
+.nav-ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
 header nav ul li {
     display: inline-block;
     cursor: pointer;
-
 }
 
 .li-elem-scrolled {
@@ -201,25 +209,24 @@ header label {
 .hero {
     /* width: 40%; */
     margin-top: 220px;
-
-    /* display: flex;
-    justify-content: space-between; */
+    display: flex;
+    justify-content: space-between;
 }
 
 .hero img {
-    float: right;
-    margin: -250px 0;
-    /* position: relative;
-    top: -200px; */
+/*    float: right;*/
+/*    margin: -250px 0;*/
+/*     position: relative;*/
+/*    top: -200px;*/
 }
 
-.hero--1 {
-    width: 40%;
-}
+/*.hero--1 {*/
+/*    width: 40%;*/
+/*}*/
 
 .hero--info {
     margin-bottom: 80px;
-    width: 40%;
+    width: 75%;
 }
 
 .hero--h1 {
@@ -241,6 +248,8 @@ header label {
     color: #fff;
     box-shadow: 2px 2px 2px rgba(58, 58, 58, 0.5);
     transition: all 500ms ease;
+    position: relative;
+    top: 20px;
 }
 
 .hero--btn:hover {
@@ -251,7 +260,7 @@ header label {
 
 .poly-logo {
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 40px;
     margin-bottom: 20px;
     display: block;
     width: 200px;

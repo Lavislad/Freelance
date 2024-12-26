@@ -6,20 +6,16 @@
     <div class="wrapper">
         <div class="container">
             <div class="hero">
-                <h1 class="hero--info hero--h1">Find the job of your dream</h1>
+                <div>
+                    <h1 class="hero--info hero--h1">Find the job of your dream</h1>
+                    <h2 class="hero--info hero--h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non accusantium explicabo, quidem itaque voluptate ipsa iusto suscipit quam. Maxime quasi nulla quos ratione dicta et consequatur ipsa nesciunt culpa?</h2>
+                    <a href="#get-started" class="hero--btn">Get started</a>
+                </div>
                 <img src="{% static 'main/img/Illustration.png' %}" alt="">
-                <h2 class="hero--info hero--h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non accusantium explicabo, quidem itaque voluptate ipsa iusto suscipit quam. Maxime quasi nulla quos ratione dicta et consequatur ipsa nesciunt culpa?</h2>
-                <a href="#get-started" class="hero--btn">Get started</a>
             </div>
         </div>
 
         <img src="{% static 'main/img/Poly logo.png' %}" alt="" class="poly-logo">
-{% for element in values %}
-        <p>{{ element }}</p>
-{% endfor %}
-{% for element in obj %}
-        <p>{{ element }}</p>
-{% endfor %}
     </div>
 
     <div class="plan" id="get-started">
