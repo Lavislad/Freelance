@@ -65,12 +65,11 @@ header {
     left: 0;
     z-index: 100;
     transition: 300ms ease;
-    border-bottom: 0.6px solid #070707;
+    border-bottom: 0.6px solid #b4b4b4;
 }
 
 .header-scrolled {
-    background: #070707; 
-    /* rgb(26, 26, 26) */
+    background: #070707;
     transition: all 500ms ease;
 }
 
