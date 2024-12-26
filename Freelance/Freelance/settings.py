@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ['https://vlados.akeka.ru/', 'http://vlados.akeka.ru/', 'https://vlados.akeka.ru', 'http://vlados.akeka.ru', 'vlados.akeka.ru']
+CSRF_TRUSTED_ORIGINS = ['https://vlados.akeka.ru']
 
 
 # Application definition
@@ -124,9 +124,9 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
