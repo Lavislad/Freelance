@@ -5,13 +5,13 @@
 * {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -215,8 +215,8 @@ header label {
 .hero img {
 /*    float: right;*/
 /*    margin: -250px 0;*/
-/*     position: relative;*/
-/*    top: -200px;*/
+/*    position: absolute;*/
+/*    top: 200px;*/
 }
 
 /*.hero--1 {*/
@@ -258,11 +258,9 @@ header label {
 }
 
 .poly-logo {
-    margin: 0 auto;
-    margin-top: 40px;
-    margin-bottom: 20px;
     display: block;
     width: 200px;
+    margin: 40px auto;
 }
 
 .big-text {
