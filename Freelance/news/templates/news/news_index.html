@@ -4,87 +4,15 @@
 
 {% block content %}
     <div class="wrapper">
-            <div class="hero container">
-                <div>
-                    <h1 class="hero--info hero--h1">Check the news</h1>
-                    <h2 class="hero--info hero--h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non accusantium explicabo, quidem itaque voluptate ipsa iusto suscipit quam. Maxime quasi nulla quos ratione dicta et consequatur ipsa nesciunt culpa?</h2>
-                    <a href="#get-started" class="hero--btn">Get started</a>
-                </div>
-                    <img src="{% static 'main/img/Illustration.png' %}" alt="">
-            </div>
+        <h1 class="h1">Check the news</h1>
 
-        <img src="{% static 'main/img/Poly logo.png' %}" alt="" class="poly-logo">
-    </div>
-
-    <div class="plan" id="get-started">
-        <h3>Your plan is</h3>
-        <div class="items">
-            <div class="item">
-                <img src="{% static 'main/img/icon.png' %}" alt="">
-                <p>Make filters</p>
-                <img src="{% static 'main/img/arrow.svg' %}" alt="">
+        <div class="news">
+            {% for el in news %}
+            <div class="elem">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anons }}</p>
             </div>
-            <div class="item">
-                <img src="{% static 'main/img/icon.png' %}" alt="">
-                <p>Find a job</p>
-                <img src="{% static 'main/img/arrow.svg' %}" alt="">
-            </div>
-            <div class="item">
-                <img src="{% static 'main/img/icon.png' %}" alt="">
-                <p>Chat with employer</p>
-                <img src="{% static 'main/img/arrow.svg' %}" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div class="wrapper">
-        <div class="big-text container">
-            <h3>Filters</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis id cum in illum consectetur dicta non nobis molestias voluptates iusto earum minus similique cumque facilis, maiores odit totam asperiores eveniet!</p>
-        </div>
-
-        <div class="filters container">
-            <div class="one-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">14</p>
-            </div>
-            <div class="one-filter two-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">65</p>
-            </div>
-            <div class="one-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">78</p>
-            </div>
-            <div class="one-filter two-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">24</p>
-            </div>
-
-            <div class="one-filter two-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">65</p>
-            </div>
-            <div class="one-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">14</p>
-            </div>
-            <div class="one-filter two-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">24</p>
-            </div>
-            <div class="one-filter">
-                <p class="h">Companies of the day</p>
-                <p>55 000 - 135 000 ₽</p>
-                <p class="number">78</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 

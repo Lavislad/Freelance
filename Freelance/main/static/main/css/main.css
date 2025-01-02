@@ -31,7 +31,7 @@ img {
 .wrapper {
     background: linear-gradient(rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
     width: 100%;
-    padding-bottom: 80px;
+    padding: 80px 0;
 }
 
 .container {
@@ -49,6 +49,15 @@ img {
 
 .p-120 {
     padding: 60px;
+}
+
+.h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 auto;
+    margin-top: 70px;
+    color: #000;
 }
 
 header {
@@ -207,7 +216,7 @@ header label {
 
 .hero {
     /* width: 40%; */
-    margin-top: 220px;
+    margin-top: 140px;
     display: flex;
     justify-content: space-between;
 }
@@ -470,6 +479,32 @@ header label {
     margin: 0 auto;
     width: 540px;
     padding: 50px;
+}
+
+.news {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.news .elem {
+    background: #ccc;
+    padding: 50px;
+    border: 1px solid #000;
+}
+
+.news .elem h3 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.news .elem p {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    max-width: 50vw;
 }
 
 /* Footer */
