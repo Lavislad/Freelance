@@ -493,6 +493,7 @@ header label {
     background: #ccc;
     padding: 50px;
     border: 1px solid #000;
+    flex: 1 1 20%;
 }
 
 .news .elem h3 {
@@ -504,7 +505,7 @@ header label {
     margin-top: 20px;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
-    max-width: 50vw;
+    max-width: 30vw;
 }
 
 /* Footer */

@@ -5,14 +5,18 @@
 {% block content %}
     <div class="wrapper">
         <h1 class="h1">Check the news</h1>
-
-        <div class="news">
-            {% for el in news %}
-            <div class="elem">
-                <h3>{{ el.title }}</h3>
-                <p>{{ el.anons }}</p>
-            </div>
-            {% endfor %}
+        {% if news %}
+            <div class="news">
+                {% for el in news %}
+                <div class="elem">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <p>{{ el.full_text }}</p>
+                </div>
+                {% endfor %}
+        {% else %}
+            <p>У вас нет записей</p>
+        {% endif %}
         </div>
     </div>
 
