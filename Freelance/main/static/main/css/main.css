@@ -73,13 +73,18 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    transition: 300ms ease;
-    border-bottom: 0.6px solid #b4b4b4;
+    transition: border-bottom 300ms ease-in-out;
+    border-bottom: 0 solid #fff;
 }
 
 .header-scrolled {
     background: #070707;
-    transition: all 500ms ease;
+    transition: all 300ms ease;
+}
+
+.header-border {
+    border-bottom: 0.6px solid #b4b4b4;
+    transition: border-bottom 300ms ease-in-out;
 }
 
 .navbar {
@@ -117,14 +122,6 @@ header nav ul {
     cursor: pointer;
 }
 
-.nav-ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    transition: 300ms ease;
-    cursor: pointer;
-}
-
 header nav ul li {
     display: inline-block;
     cursor: pointer;
@@ -137,6 +134,10 @@ header nav ul li {
 
 header nav ul li a {
     position: relative;
+    color: #070707;
+}
+
+.nav-a {
     color: #070707;
 }
 

@@ -15,10 +15,10 @@
             <input type="checkbox" name="menu" id="menu">
             <label for="menu"><i class="fa-solid fa-bars"></i></label>
             <nav>
-                <ul class="nav-ul">
-                    <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}">Main</a></li>
-                    <li class="{% if title == 'News Page' %}active{% endif %}"><a href="{% url 'news_index' %}">News</a></li>
-                    <li class="{% if title == 'Feedback' %}active{% endif %}"><a href="#">Feedback</a></li>
+                <ul>
+                    <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}" class="nav-a">Main</a></li>
+                    <li class="{% if title == 'News Page' %}active{% endif %}"><a href="{% url 'news_index' %}" class="nav-a">News</a></li>
+                    <li class="{% if title == 'Feedback' %}active{% endif %}"><a href="#" class="nav-a">Feedback</a></li>
                     <li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
                 </ul>
             </nav>
@@ -64,21 +64,30 @@
     </footer>
 
     <script>
+        window.addEventListener('scroll', () => {
+        document.querySelector('.header1').classList.toggle('header-border', window.scrollY > 50);
+        });
+
+        window.addEventListener('scroll', () => {
+        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
+        });
+
 //        window.addEventListener('scroll', () => {
 //        document.querySelector('.header1').classList.toggle('header-scrolled', window.scrollY > 50);
 //        });
 //
 //        window.addEventListener('scroll', () => {
-//        document.querySelector('nav-ul').classList.toggle('li-elem-scrolled', window.scrollY > 50);
+//        document.querySelector('header nav ul').classList.toggle('li-elem-scrolled', window.scrollY > 50);
 //        });
 //
 //        window.addEventListener('scroll', function() {
 //        if (pageYOffset > 50) {
-//            document.querySelector('header nav ul').classList.add('li-elem-scrolled')
-//            document.querySelector('header nav ul').classList.remove('header nav ul li.btn a')
-//            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled:hover')
-//        } else {
-//            document.querySelector('header nav ul').classList.remove('li-elem-scrolled')
+//            document.querySelector('header nav ul li.btn a').classList.add('nav-btn-scrolled')
+////            document.querySelector('header nav ul').classList.add('li-elem-scrolled')
+//        }
+//        else {
+////            document.querySelector('header nav ul').classList.remove('li-elem-scrolled')
+//            document.querySelector('header nav ul li.btn a').classList.remove('nav-btn-scrolled')
 //        }
 //        })
 //
@@ -93,11 +102,11 @@
 ////        })
 //
 //        window.addEventListener('scroll', () => {
-//        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
+//        document.querySelector('header nav ul').classList.toggle('header nav ul', window.scrollY < 50);
 //        });
 //
 //        window.addEventListener('scroll', () => {
-//        document.querySelector('header nav ul').classList.toggle('header nav ul', window.scrollY < 50);
+//        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
 //        });
     </script>
 </body>
