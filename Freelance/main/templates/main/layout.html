@@ -18,7 +18,7 @@
                 <ul>
                     <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}" class="nav-a">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %}"><a href="{% url 'news_index' %}" class="nav-a">News</a></li>
-                    <li class="{% if title == 'Feedback' %}active{% endif %}"><a href="#" class="nav-a">Feedback</a></li>
+                    <li class="{% if title == 'Feedback' %}active{% endif %}"><a href="{% url 'feedback_index' %}" class="nav-a">Feedback</a></li>
                     <li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
                 </ul>
             </nav>

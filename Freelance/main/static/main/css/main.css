@@ -514,12 +514,14 @@ form .btn {
     flex: 1 1 20%;
 }
 
-.news .elem h3 {
+.news .elem h3,
+.feedback .elem h3 {
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
 }
 
-.news .elem p {
+.news .elem p,
+.feedback .elem p {
     margin-top: 20px;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
@@ -529,6 +531,17 @@ form .btn {
 .news-form {
     width: 30vw;
     margin: 0 auto;
+}
+
+.feedback {
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.feedback .elem {
+    background: #ccc;
+    padding: 50px;
+    border: 1px solid #000;
 }
 
 /* Footer */

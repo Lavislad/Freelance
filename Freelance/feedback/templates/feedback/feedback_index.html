@@ -4,15 +4,15 @@
 
 {% block content %}
     <div class="wrapper">
-        <h1 class="h1">Check the news</h1>
-        {% if news %}
-            <div class="news">
-                {% for el in news %}
+        <h1 class="h1">Feedback</h1>
+        {% if feedback %}
+            <div class="feedback container">
+                {% for el in feedback %}
                 <div class="elem">
                     <h3>{{ el.title }}</h3>
-                    <p>{{ el.anons }}</p>
+                    <p><i>Author: </i>{{ el.user_name }}</p>
                     <p>{{ el.full_text }}</p>
-                    <p>{{ el.date }}</p>
+                    <p><i>Date: </i>{{ el.date }}</p>
                 </div>
                 {% endfor %}
         {% else %}
