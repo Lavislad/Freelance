@@ -60,6 +60,14 @@ img {
     color: #000;
 }
 
+.h2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 50px auto;
+    color: #000;
+}
+
 header {
     padding: 30px 0;
     display: flex;
@@ -143,7 +151,8 @@ header nav ul li a {
 
 .nav-btn,
 .hero--login .elem .btn,
-.hero--register .elem .btn {
+.hero--register .elem .btn,
+.news-form .btn {
     border: 1px solid #464646;
     border-radius: 20px;
     padding: 20px 40px;
@@ -166,7 +175,8 @@ header nav ul li a {
 }
 
 header nav ul li.btn a:hover,
-.hero--login .elem .btn:hover {
+.hero--login .elem .btn:hover,
+.news-form .btn:hover {
     background: #464646;
     color: #fff;
 }
@@ -412,7 +422,9 @@ header label {
 .hero--login textarea,
 .hero--login input,
 .hero--register textarea,
-.hero--register input {
+.hero--register input,
+.news-form input,
+.news-form textarea {
     display: block;
     margin-bottom: 50px;
     margin-top: 10px;
@@ -428,8 +440,13 @@ header label {
     font-size: 14px;
 }
 
+.news-form textarea {
+    height: 200px;
+}
+
 .hero--login .elem .btn,
-.hero--register .elem .btn{
+.hero--register .elem .btn,
+form .btn {
     width: 100%;
     font-size: 18px;
 }
@@ -507,6 +524,11 @@ header label {
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     max-width: 30vw;
+}
+
+.news-form {
+    width: 30vw;
+    margin: 0 auto;
 }
 
 /* Footer */

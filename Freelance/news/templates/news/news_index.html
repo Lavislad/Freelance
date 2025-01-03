@@ -16,8 +16,20 @@
                 {% endfor %}
         {% else %}
             <p>У вас нет записей</p>
+            </div>
         {% endif %}
-        </div>
     </div>
 
+    <div class="wrapper">
+        <h2 class="h2">Create the news</h2>
+        <form method="post" class="news-form">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.anons }}
+            {{ form.full_text }}
+            {{ form.date }}
+            <button class="btn" type="submit">Submit</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
 {% endblock %}
