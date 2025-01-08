@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Delete the news{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <h2 class="h2">Delete the "{{ article.title }}"</h2>
+        <form method="post" class="news-form">
+            {% csrf_token %}
+            <button class="btn" type="submit">Delete</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

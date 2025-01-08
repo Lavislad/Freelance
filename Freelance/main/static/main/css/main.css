@@ -32,6 +32,7 @@ img {
     background: linear-gradient(rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
     width: 100%;
     padding: 80px 0;
+    min-height: 38vh;
 }
 
 .container {
@@ -152,7 +153,8 @@ header nav ul li a {
 .nav-btn,
 .hero--login .elem .btn,
 .hero--register .elem .btn,
-.news-form .btn {
+.news-form .btn,
+.news--details .btn {
     border: 1px solid #464646;
     border-radius: 20px;
     padding: 20px 40px;
@@ -176,7 +178,8 @@ header nav ul li a {
 
 header nav ul li.btn a:hover,
 .hero--login .elem .btn:hover,
-.news-form .btn:hover {
+.news-form .btn:hover,
+.news--details .btn:hover {
     background: #464646;
     color: #fff;
 }
@@ -556,6 +559,10 @@ form .btn {
     color: #000;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.news--details .btn {
+    text-decoration: none;
 }
 
 .feedback {
