@@ -13,6 +13,7 @@
                     <p>{{ el.anons }}</p>
                     <p>{{ el.full_text }}</p>
                     <p>{{ el.date }}</p>
+                    <a href="{% url 'news_detail' el.id %}" class="a">Read more</a>
                 </div>
                 {% endfor %}
         {% else %}
@@ -33,4 +34,6 @@
             <span>{{ error }}</span>
         </form>
     </div>
+</div>
+
 {% endblock %}

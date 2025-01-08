@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <h1 class="h1">{{ article.title }}</h1>
+        <div class="news--details">
+            <p>{{ article.date }}</p>
+            <p>{{ article.full_text }}</p>
+            <a href="{% url 'news_index' %}">Go to news page</a>
+        </div>
+    </div>
+{% endblock %}

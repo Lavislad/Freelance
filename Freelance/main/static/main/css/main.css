@@ -531,6 +531,31 @@ form .btn {
 .news-form {
     width: 30vw;
     margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.news .elem a {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+}
+
+.news--details {
+    width: 1080px;
+    margin: 50px auto;
+    background: #ccc;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.news--details p {
+    margin: 20px 0;
+}
+
+.news--details a {
+    color: #000;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .feedback {
