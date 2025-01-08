@@ -8,6 +8,14 @@ class NewsDetailView(DetailView):
     template_name = 'news/details_view.html'
     context_object_name = 'article'
 
+class NewsUpdateView(UpdateView):
+    model = Articles
+    template_name = 'news/news_update.html'
+    form_class = ArticlesForm
+
+def news_update(request):
+    return render(request, 'news/news_update.html')
+
 def news_index(request):
     error = ''
     if request.method == 'POST':
