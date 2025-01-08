@@ -18,6 +18,7 @@ class ArticlesForm(ModelForm):
                 'placeholder': 'Text'
             }),
             'date': DateTimeInput(attrs={
-                'placeholder': 'Date'
-            })
+                'placeholder': 'Date',
+                'type': 'datetime-local'
+            }, format=('%Y-%m-%dT%H:%M'))
         }
