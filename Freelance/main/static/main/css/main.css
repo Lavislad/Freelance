@@ -178,6 +178,7 @@ header nav ul li a {
 
 header nav ul li.btn a:hover,
 .hero--login .elem .btn:hover,
+.hero--register .btn:hover,
 .news-form .btn:hover,
 .news--details .btn:hover {
     background: #464646;
