@@ -12,8 +12,6 @@
     <div class="header1">
         <header class="container">
             <span><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg"></span>
-            <input type="checkbox" name="menu" id="menu">
-            <label for="menu"><i class="fa-solid fa-bars"></i></label>
             <nav>
                 <ul>
                     <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}" class="nav-a">Main</a></li>
@@ -51,10 +49,8 @@
                 <p>Address: Engels avenue, 23</p>
             </div>
             <div class="email">
-                <div class="padding">
-                    <input type="text" placeholder="Inter email">
-                    <button>Subscribe to news</button>
-                </div>
+                <input type="text" placeholder="Inter email">
+                <button>Subscribe to news</button>
             </div>
         </div>
         <div class="container">
@@ -66,10 +62,6 @@
     <script>
         window.addEventListener('scroll', () => {
         document.querySelector('.header1').classList.toggle('header-border', window.scrollY > 50);
-        });
-
-        window.addEventListener('scroll', () => {
-        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
         });
 
 //        window.addEventListener('scroll', () => {
