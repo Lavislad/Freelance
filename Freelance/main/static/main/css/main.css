@@ -36,7 +36,8 @@ img {
 }
 
 .container {
-    width: 1440px;
+    max-width: 1440px;
+    min-width: 80vw;
     margin: 0 auto;
 }
 
@@ -237,10 +238,7 @@ header label {
 }
 
 .hero img {
-/*    float: right;*/
-/*    margin: -250px 0;*/
-/*    position: absolute;*/
-/*    top: 200px;*/
+    aspect-ratio: 1 / 1;
 }
 
 /*.hero--1 {*/
@@ -300,9 +298,9 @@ header label {
     font-weight: 700;
     background: #B9FF66;
     padding: 5px;
-    padding-top: 5px;
     border-radius: 10px;
     display: block;
+    text-align: center;
 }
 
 .big-text p {
@@ -588,7 +586,6 @@ footer .footer-elems {
     display: flex;
     justify-content: space-between;
     padding-top: 50px;
-    width: 1440px;
     margin: 0 auto;
     align-content: center;
 }
@@ -601,9 +598,8 @@ footer p {
     color: #fff;
 }
 
-.poly-logo-footer {
+.logo-footer {
     display: block;
-    width: 200px;
     height: 100%;
 }
 
@@ -661,6 +657,7 @@ footer .footer-elems .email .padding button {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     font-size: 15px;
+    outline: none;
 }
 
 footer hr {
@@ -693,18 +690,16 @@ footer hr {
     img {
         max-width: 90vw;
     }
-    .container {
-        width: 90%;
-    }
+/*    .container {*/
+/*        min-width: 70vw;*/
+/*    }*/
 
     .hero--1 {
         width: 100%;
     }
 
     .hero img {
-        float: left;
-        margin-top: 0;
-        margin-bottom: 0;
+        display: none;
     }
 
     .hero .hero--info {
@@ -713,7 +708,7 @@ footer hr {
     }
 
     .hero {
-        margin-top: 40px;
+        margin-top: 80px;
     }
 
     .hero--h2 {
@@ -722,5 +717,49 @@ footer hr {
 
     .hero--btn {
         margin: 0 auto;
+    }
+
+    .poly-logo {
+        padding-top: 50px;
+    }
+
+    footer .footer-elems .links {
+        display: block;
+        justify-content: inherit;
+    }
+
+    footer .footer-elems .links a {
+        margin-top: 20px;
+    }
+
+    footer .footer-elems {
+        display: block;
+        justify-content: inherit;
+    }
+
+    footer .footer-elems .email {
+        width: 100%;
+        padding: 20px 10px;
+        margin-top: 50px;
+    }
+
+    footer .footer-elems .email .padding button {
+        width: fit-content;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .big-text {
+        display: block;
+        justify-content: none;
+    }
+
+    .big-text h3 {
+        margin-bottom: 20px;
+        width: fit-content;
+    }
+
+    .big-text p {
+        width: 80vw;
     }
 }
