@@ -46,12 +46,13 @@ img {
     margin-top: 100px;
 }
 
-.p-240 {
+.p-240,
+.p-240-login {
     padding: 120px 0;
 }
 
 .p-120 {
-    padding: 60px;
+    padding: 60px 0;
 }
 
 .h1 {
@@ -277,7 +278,8 @@ header label {
     margin: 40px auto;
 }
 
-.big-text {
+.big-text,
+.big-text-login {
     margin: 0 auto;
     padding: 50px 0;
     display: flex;
@@ -285,7 +287,8 @@ header label {
     align-content: center;
 }
 
-.big-text h3 {
+.big-text h3,
+.big-text-login h3 {
     font-size: 50px;
     font-weight: 700;
     background: #B9FF66;
@@ -295,7 +298,8 @@ header label {
     text-align: center;
 }
 
-.big-text p {
+.big-text p,
+.big-text-login p {
     display: block;
     width: 50%;
     font-size: 20px;
@@ -432,6 +436,7 @@ header label {
     cursor: text;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 14px;
+    box-sizing: content-box;
 }
 
 .news-form textarea {
@@ -464,7 +469,6 @@ form .btn {
 .big-text-register h3 {
     font-size: 50px;
     font-weight: 700;
-    border-radius: 10px;
     margin: 0 auto;
     text-align: center;
     margin-top: 10px;
@@ -484,12 +488,13 @@ form .btn {
     height: auto;
     border-radius: 20px;
     background: rgb(236, 236, 236);
-    width: 640px;
+    width: 30%;
+    margin: 0 auto;
 }
 
 .hero--register .elem {
     margin: 0 auto;
-    width: 540px;
+    width: 80%;
     padding: 50px;
 }
 
@@ -766,18 +771,65 @@ footer hr {
         margin: 20px auto;
     }
 
-    .big-text {
+    .big-text,
+    .big-text-login {
         display: block;
         justify-content: none;
     }
 
-    .big-text h3 {
+    .big-text h3,
+    .big-text-login h3{
         margin-bottom: 20px;
         width: fit-content;
     }
 
-    .big-text p {
+    .big-text p,
+    .big-text-login p {
         width: 100%;
         padding: 0;
+    }
+
+    .news-form {
+        width: 80vw;
+    }
+
+    .hero--login textarea,
+    .hero--login input,
+    .hero--register textarea,
+    .hero--register input,
+    .news-form input,
+    .news-form textarea {
+        width: 91.4%;
+    }
+
+    .p-240-login {
+        padding: 58px 0;
+    }
+
+    .hero--login {
+        height: auto;
+        border-radius: 20px;
+        background: rgb(236, 236, 236);
+        justify-content: row;
+    }
+
+    .hero--login img {
+        display: none;
+    }
+
+    .hero--register {
+        width: 80vw;
+    }
+
+    .hero--register .elem {
+        width: 70%;
+    }
+
+    .big-text-register h3 {
+        text-align: center;
+    }
+
+    .big-text-register p {
+        width: 90%;
     }
 }

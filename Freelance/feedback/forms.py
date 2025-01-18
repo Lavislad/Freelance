@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 class FeedbackForm(ModelForm):
     class Meta:
         model = Feedback
-        fields = ['title', 'user_name', 'full_text', 'date']
+        fields = ['title', 'user_name', 'full_text']
 
         widgets = {
             'title': TextInput(attrs={
@@ -16,9 +16,5 @@ class FeedbackForm(ModelForm):
             }),
             'full_text': Textarea(attrs={
                 'placeholder': 'Text'
-            }),
-            'date': DateTimeInput(attrs={
-                'placeholder': 'Date',
-                'type': 'datetime-local'
-            }, format=('%Y-%m-%dT%H:%M'))
+            })
         }
