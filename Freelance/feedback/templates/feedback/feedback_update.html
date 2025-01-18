@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{ feedback.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <h2 class="h2">Edit the feedback</h2>
+        <form method="post" class="news-form">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.user_name }}
+            {{ form.full_text }}
+            {{ form.date }}
+            <button class="btn" type="submit">Submit</button>
+            <p>{{ error }}</p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -9,6 +9,9 @@ class Feedback(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return f'/feedback/{self.id}'
+
     class Meta:
         verbose_name = 'Фидбэк'
-        verbose_name_plural = 'Фидбэк'
+        verbose_name_plural = 'Фидбэки'

@@ -13,15 +13,14 @@
                     <p><i>Author: </i>{{ el.user_name }}</p>
                     <p>{{ el.full_text }}</p>
                     <p><i>Date: </i>{{ el.date }}</p>
+                    <p><a href='{% url "feedback_details" el.id %}' class="a">Go to feedback page</a></p>
                 </div>
                 {% endfor %}
         {% else %}
             <p>You have no notes</p>
             </div>
         {% endif %}
-    </div>
 
-    <div class="wrapper">
         <h2 class="h2">Make us know</h2>
         <form method="post" class="news-form">
             {% csrf_token %}
