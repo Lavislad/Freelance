@@ -22,11 +22,11 @@
     </div>
 
     <div class="wrapper">
-        <h2 class="h2">Create the news</h2>
+        <h2 class="h2">Make us know</h2>
         <form method="post" class="news-form">
             {% csrf_token %}
             {{ form.title }}
-            {{ form.anons }}
+            {{ form.user_name }}
             {{ form.full_text }}
             {{ form.date }}
             <button class="btn" type="submit">Submit</button>
