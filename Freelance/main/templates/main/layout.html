@@ -11,9 +11,10 @@
 <body>
     <div class="header1">
         <header class="container">
-            <span><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg"></span>
+            <span><a href="{% url 'index' %}"><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg"></a></span>
             <nav>
-                <ul>
+                <button class="menu-btn">Menu</button>
+                <ul class="menu">
                     <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}" class="nav-a">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %}"><a href="{% url 'news_index' %}" class="nav-a">News</a></li>
                     <li class="{% if title == 'Feedback Page' %}active{% endif %}"><a href="{% url 'feedback_index' %}" class="nav-a">Feedback</a></li>
@@ -62,6 +63,12 @@
     <script>
         window.addEventListener('scroll', () => {
         document.querySelector('.header1').classList.toggle('header-border', window.scrollY > 50);
+        });
+
+        document.querySelector('.menu-btn').
+        addEventListener('click', function() {
+            const menu = document.querySelector('header nav ul');
+            menu.classList.toggle('open');
         });
 
 //        window.addEventListener('scroll', () => {
