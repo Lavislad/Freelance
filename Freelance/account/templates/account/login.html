@@ -14,11 +14,14 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis id cum in illum consectetur dicta non nobis molestias voluptates iusto earum minus similique cumque facilis, maiores odit totam asperiores eveniet!</p>
         </div>
         <div class="hero--login container">
-            <form class="elem">
-                <label>Enter email</label>
-                <textarea placeholder="Email"></textarea>
+            <form method="post" class="elem">
+                {% csrf_token %}
+                <label>Enter username</label>
+                {{ form.username }}
                 <label>Enter password</label>
-                <textarea placeholder="Password"></textarea>
+                {{ form.password }}
+<!--                <textarea placeholder="Email"></textarea>-->
+<!--                <textarea placeholder="Password"></textarea>-->
                 <button class="btn">Log in</button>
                 <p>Don't have an account? <span><a href="{% url 'register' %}">Register</a></span></p>
             </form>
