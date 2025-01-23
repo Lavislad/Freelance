@@ -68,7 +68,8 @@ img {
     text-align: center;
     font-size: 50px;
     font-weight: 700;
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
     color: #000;
 }
 
@@ -194,7 +195,7 @@ header nav ul li.btn a:hover,
 
 header nav ul li:not(.btn) a::before {
     content: '';
-    /* display: block; */
+    display: block;
     width: 0px;
     height: 5px;
     background-color: #B9FF66;
@@ -469,7 +470,8 @@ form .btn {
 
 .big-text-register {
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 0;
+    padding-bottom: 20px;
 }
 
 .big-text-register h3 {
