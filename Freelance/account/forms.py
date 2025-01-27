@@ -1,6 +1,7 @@
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .models import User
-from django.forms import TextInput, PasswordInput
+from django.forms import TextInput, PasswordInput, CharField
+from django import forms
 
 
 class UserLoginForm(AuthenticationForm):
@@ -16,3 +17,22 @@ class UserLoginForm(AuthenticationForm):
                 'placeholder': 'Password'
             })
         }
+
+class UserRegistrationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = (
+            'first_name',
+            'last_name',
+            'username',
+            'email',
+            'password1',
+            'password2'
+        )
+
+    first_name = forms.CharField(empty_value='')
+    last_name = forms.CharField()
+    username = forms.CharField()
+    email = forms.CharField()
+    password1 = forms.CharField()
+    password2 = forms.CharField()

@@ -64,13 +64,18 @@ img {
     color: #000;
 }
 
-.h2 {
+.h2,
+.h2--feedback {
     text-align: center;
     font-size: 50px;
     font-weight: 700;
     margin: 0 auto;
     margin-bottom: 50px;
     color: #000;
+}
+
+.h2--feedback {
+    margin-top: 80px;
 }
 
 header {
@@ -505,6 +510,12 @@ form .btn {
     justify-content: space-between;
     gap: 10%;
     width: 96%;
+}
+
+.registration--error {
+    display: block;
+    color: #ff4f4f;
+    font-style: italic;
 }
 
 .hero--register .elem {
