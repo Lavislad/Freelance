@@ -500,6 +500,13 @@ form .btn {
     margin: 0 auto;
 }
 
+.form-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    width: 96%;
+}
+
 .hero--register .elem {
     margin: 0 auto;
     width: 80%;
