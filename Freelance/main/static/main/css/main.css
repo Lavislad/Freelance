@@ -200,7 +200,7 @@ header nav ul li.btn a:hover,
 }
 
 header nav ul li:not(.btn) a::before,
-header nav ul li:not(.profile) a::before {
+header nav ul li:not(.btn).active a::before {
     content: '';
     display: block;
     width: 0%;
@@ -213,12 +213,11 @@ header nav ul li:not(.profile) a::before {
     transition: all 500ms;
 }
 
-header nav ul li:not(.btn).active a::before,
-header nav ul li:not(.btn):not(.profile).active a::before {
+header nav ul li:not(.btn).active a::before {
     width: 40px;
 }
 
-header nav ul li:not(.btn):not(.profile):hover a::before {
+header nav ul li:hover a::before {
     width: 100%;
     transform: translateX(20px);
 }
