@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="720" height="720" viewBox="0 0 720 720">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-1" y1="88.344" x2="720" y2="631.656" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#95d24d"/>
+      <stop offset="1" stop-color="#d8ffaa"/>
+    </linearGradient>
+  </defs>
+  <ellipse id="Эллипс_1" data-name="Эллипс 1" class="cls-1" cx="359.5" cy="360" rx="360.5" ry="360.5"/>
+  <circle id="Эллипс_2" data-name="Эллипс 2" class="cls-2" cx="360.5" cy="247.5" r="136.5"/>
+  <path id="Фигура_1" data-name="Фигура 1" class="cls-3" d="M136,525c10.511,41.293,219.786,230.228,437,22,43.083-48.023-49.209-170-89-173-29.281-1.5-28.789,32.562-126,40-86.116-2.836-94.446-41.036-117-40C196.213,377.307,125.489,483.707,136,525Z"/>
+</svg>

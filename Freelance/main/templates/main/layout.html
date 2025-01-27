@@ -18,7 +18,7 @@
                     <li class="{% if title == 'Main Page' %}active{% endif %}"><a href="{% url 'index' %}" class="nav-a">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %}"><a href="{% url 'news_index' %}" class="nav-a">News</a></li>
                     <li class="{% if title == 'Feedback Page' %}active{% endif %}"><a href="{% url 'feedback_index' %}" class="nav-a">Feedback</a></li>
-                    {% if user.is_authenticated %}<li class="profile"><a href="#">Profile</a></li>
+                    {% if user.is_authenticated %}<li class="profile"><a href="#"><img src="{% static 'main/img/NoAvatarImage.svg' %}" class="avatar" alt="Avatar">Profile</a></li>
                     {% else %}<li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
                     {% endif %}
                 </ul>
