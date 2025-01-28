@@ -199,8 +199,8 @@ header nav ul li.btn a:hover,
     border: 1px solid #fff;
 }
 
-header nav ul li:not(.btn) a::before,
-header nav ul li:not(.btn).active a::before {
+header nav ul li.hover a::before,
+header nav ul li.hover.active a::before {
     content: '';
     display: block;
     width: 0%;
@@ -213,8 +213,7 @@ header nav ul li:not(.btn).active a::before {
     transition: all 500ms;
 }
 
-header nav ul li:not(.btn).active a::before,
-header nav ul li:not(.profile).active a::before {
+header nav ul li.hover.active a::before {
     width: 35px;
 }
 
