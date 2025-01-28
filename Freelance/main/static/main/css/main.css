@@ -213,11 +213,13 @@ header nav ul li:not(.btn).active a::before {
     transition: all 500ms;
 }
 
-header nav ul li:not(.btn).active a::before {
-    width: 40px;
+header nav ul li:not(.btn).active a::before,
+header nav ul li:not(.profile).active a::before {
+    width: 35px;
 }
 
-header nav ul li:hover a::before {
+header nav ul li:hover a::before,
+header nav ul li.active:hover a::before {
     width: 100%;
     transform: translateX(20px);
 }

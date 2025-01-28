@@ -20,7 +20,7 @@
             <p>You have no notes</p>
             </div>
         {% endif %}
-
+        {% if user.is_authenticated %}
         <h2 class="h2--feedback">Make us know</h2>
         <form method="post" class="news-form">
             {% csrf_token %}
@@ -31,6 +31,7 @@
             <button class="btn" type="submit">Submit</button>
             <span>{{ error }}</span>
         </form>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
