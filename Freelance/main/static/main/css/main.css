@@ -237,6 +237,7 @@ nav .avatar {
     position: relative;
     top: 18px;
     left: -12px;
+    border-radius: 50%;
 }
 
 nav .profile {
