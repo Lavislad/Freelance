@@ -15,10 +15,10 @@
             <nav>
                 <button class="menu-btn">Menu</button>
                 <ul class="menu">
-                    <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}" class="nav-a">Main</a></li>
-                    <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}" class="nav-a">News</a></li>
-                    <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}" class="nav-a">Feedback</a></li>
-                    {% if user.is_authenticated %}<li class="profile"><a href="#"><img src="{% static 'main/img/NoAvatarImage.svg' %}" class="avatar" alt="Avatar">{{ user.username }}</a></li>
+                    <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}">Main</a></li>
+                    <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
+                    <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
+                    {% if user.is_authenticated %}<li class="profile"><a href="#"><img src="{% static 'main/img/NoAvatarImage.svg' %}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></a></li>
                     {% else %}<li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
                     {% endif %}
                 </ul>
