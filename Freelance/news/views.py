@@ -8,6 +8,19 @@ class NewsDetailView(DetailView):
     template_name = 'news/details_view.html'
     context_object_name = 'article'
 
+    def get_context_data(self, **kwargs):
+        news = Articles.objects.order_by('-date')[:4]
+        context = super().get_context_data(**kwargs)
+        context["news"] = news
+        return context
+
+    # def OtherNewsView(request):
+    #     news = Articles.objects.order_by('-date')
+    #     data = {
+    #         'news': news
+    #     }
+    #     return render(request, 'news/details_view.html', data)
+
 class NewsUpdateView(UpdateView):
     model = Articles
     template_name = 'news/news_update.html'

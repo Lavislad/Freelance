@@ -566,7 +566,8 @@ form .btn {
 }
 
 .news .elem .inline,
-.feedback .elem .inline {
+.feedback .elem .inline,
+.news--details .other-news .inline{
     display: flex;
     justify-content: flex-start;
     gap: 1vw;
@@ -574,7 +575,8 @@ form .btn {
 }
 
 .news .elem .inline .date,
-.feedback .elem .inline .date {
+.feedback .elem .inline .date,
+.news--details .date {
     color: #646464;
     font-size: 16px;
 }
@@ -586,37 +588,80 @@ form .btn {
 }
 
 .news .elem a,
-.feedback .elem a {
+.feedback .elem a,
+.news--details .other-news a {
     color: #000;
     cursor: pointer;
     transition: 300ms;
 }
 
 .news .elem a:hover,
-.feedback .elem a:hover {
+.feedback .elem a:hover,
+.news--details .other-news a:hover {
     color: #545454;
 }
 
 .news--details {
-    width: 1080px;
+    width: 100%;
     margin: 50px auto;
-    background: #ccc;
-    border-radius: 20px;
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-.news--details p {
+.news--details .details {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #000000;
+    width: 100%;
+}
+
+.news--details .details .anons {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.news--details .details .full_text {
+    font-size: 20px;
+    margin: 0 50px;
+    margin-top: 40px;
+}
+
+.news--details .details p,
+.news--details .other-news .elem p {
     margin: 20px 0;
 }
 
-.news--details a {
+.news--details .details a{
     color: #000;
     cursor: pointer;
     text-decoration: underline;
 }
 
-.news--details .btn {
+.news--details .details .btn {
     text-decoration: none;
+}
+
+.news--details .other-news {
+    width: 20vw;
+}
+
+.news--details .other-news .elem {
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #000000;
+    margin-bottom: 15px;
+}
+
+.news--details .other-news .elem .date {
+    margin-top: 5px;
+}
+
+.news--details .other-news a.inline {
+    margin-bottom: 10px;
 }
 
 .feedback {

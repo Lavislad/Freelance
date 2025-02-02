@@ -4,14 +4,32 @@
 
 {% block content %}
     <div class="wrapper">
-        <h1 class="h1">{{ article.title }}</h1>
-        <div class="news--details">
-            <p>{{ article.date }}</p>
-            <p>{{ article.anons }}</p>
-            <p>{{ article.full_text }}</p>
-            <a href="{% url 'news_index' %}">Go to news page</a><br><br><br>
-            <a href="{% url 'news_update' article.id %}" class="btn">Update</a>
-            <a href="{% url 'news_delete' article.id %}" class="btn">Delete</a>
+                <h2 class="h2">{{ article.title }}</h2>
+        <div class="news--details container">
+            <div class="details">
+                <p class="anons">{{ article.anons }}</p>
+                <p class="full_text">{{ article.full_text }}</p>
+                <p class="date">{{ article.date }}</p>
+                <a href="{% url 'news_update' article.id %}" class="btn">Update</a>
+                <a href="{% url 'news_delete' article.id %}" class="btn">Delete</a>
+            </div>
+            {% if news %}
+            <div class="other-news">
+                <a href="{% url 'news_index' %}" class="inline">
+                    <h2>Other news</h2>
+                    <img src='{% static "main/img/arrow.svg" %}' alt="">
+                </a>
+                {% for el in news %}
+                    <div class="elem">
+                        <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
+                        <p class="date">{{ el.date }}</p>
+                        <p>{{ el.anons }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>You have no notes</p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
