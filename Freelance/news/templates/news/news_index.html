@@ -9,11 +9,12 @@
             <div class="news">
                 {% for el in news %}
                 <div class="elem">
-                    <h3>{{ el.title }}</h3>
+                    <div class="inline">
+                        <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
+                        <p class="date">{{ el.date }}</p>
+                    </div>
                     <p>{{ el.anons }}</p>
-                    <p>{{ el.full_text }}</p>
-                    <p>{{ el.date }}</p>
-                    <a href="{% url 'news_detail' el.id %}" class="a">Read more</a>
+
                 </div>
                 {% endfor %}
         {% else %}

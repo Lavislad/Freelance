@@ -551,14 +551,26 @@ form .btn {
 .feedback .elem h3 {
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .news .elem p,
 .feedback .elem p {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 30px;
+    font-size: 22px;
     font-family: 'Poppins', sans-serif;
     max-width: 30vw;
+}
+
+.news .elem .inline {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1vw;
+}
+
+.news .elem .inline .date {
+    color: #646464;
+    font-size: 16px;
 }
 
 .news-form {
