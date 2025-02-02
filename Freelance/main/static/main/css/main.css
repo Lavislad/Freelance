@@ -628,7 +628,8 @@ form .btn {
     background: #fff;
     padding: 50px;
     border: 1px solid #000000;
-    border-radius: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }
 
 .feedback .elem h4,
