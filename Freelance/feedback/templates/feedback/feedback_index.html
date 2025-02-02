@@ -9,11 +9,12 @@
             <div class="feedback container">
                 {% for el in feedback %}
                 <div class="elem">
-                    <h3>{{ el.title }}</h3>
-                    <p><i>Author: </i>{{ el.user_name }}</p>
+                    <div class="inline">
+                        <h4>{{ el.user_name }}</h4>
+                        <h4 class="date">{{ el.date }}</h4>
+                    </div>
+                    <a href='{% url "feedback_details" el.id %}' class="a"><h3>{{ el.title }}</h3></a>
                     <p>{{ el.full_text }}</p>
-                    <p><i>Date: </i>{{ el.date }}</p>
-                    <p><a href='{% url "feedback_details" el.id %}' class="a">Go to feedback page</a></p>
                 </div>
                 {% endfor %}
         {% else %}

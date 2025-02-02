@@ -6,12 +6,12 @@
     <div class="wrapper">
         <h1 class="h1">Check the news</h1>
         {% if news %}
-            <div class="news">
+            <div class="news container">
                 {% for el in news %}
                 <div class="elem">
                     <div class="inline">
                         <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
-                        <p class="date">{{ el.date }}</p>
+                        <h4 class="date">{{ el.date }}</h4>
                     </div>
                     <p>{{ el.anons }}</p>
 
@@ -23,8 +23,7 @@
         {% endif %}
     </div>
     {% if user.is_authenticated %}
-    <div class="wrapper">
-        <h2 class="h2">Create the news</h2>
+        <h2 class="h2 h2--feedback">Create the news</h2>
         <form method="post" class="news-form">
             {% csrf_token %}
             {{ form.title }}
@@ -34,7 +33,6 @@
             <button class="btn" type="submit">Submit</button>
             <p>{{ error }}</p>
         </form>
-    </div>
     {% endif %}
 </div>
 
