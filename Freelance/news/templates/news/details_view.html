@@ -7,9 +7,11 @@
                 <h2 class="h2">{{ article.title }}</h2>
         <div class="news--details container">
             <div class="details">
-                <p class="anons">{{ article.anons }}</p>
-                <p class="full_text">{{ article.full_text }}</p>
-                <p class="date">{{ article.date }}</p>
+                <div class="inline">
+                    <p class="anons">{{ article.anons }}</p>
+                    <p class="date">{{ article.date }}</p>
+                </div>
+                <p class="full_text">{{ article.full_text }}</p><br><br>
                 <a href="{% url 'news_update' article.id %}" class="btn">Update</a>
                 <a href="{% url 'news_delete' article.id %}" class="btn">Delete</a>
             </div>

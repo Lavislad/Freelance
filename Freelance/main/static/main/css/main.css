@@ -160,7 +160,8 @@ header nav ul li a {
 .hero--login .elem .btn,
 .hero--register .elem .btn,
 .news-form .btn,
-.news--details .btn {
+.news--details .btn,
+.feedback--details .btn {
     border: 1px solid #464646;
     border-radius: 20px;
     padding: 20px 40px;
@@ -186,7 +187,8 @@ header nav ul li.btn a:hover,
 .hero--login .elem .btn:hover,
 .hero--register .btn:hover,
 .news-form .btn:hover,
-.news--details .btn:hover {
+.news--details .btn:hover,
+.feedback--details .btn:hover {
     background: #464646;
     color: #fff;
 }
@@ -536,7 +538,7 @@ form .btn {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    gap: 3vw;
+    gap: 1vw;
     flex-wrap: wrap;
     margin-top: 50px;
 }
@@ -545,7 +547,6 @@ form .btn {
     background: #fff;
     padding: 50px;
     border: 1px solid #000000;
-/*    box-shadow: 0 0 2px #ccc;*/
     flex: 1 1 30%;
     border-radius: 10px;
 }
@@ -562,12 +563,12 @@ form .btn {
     margin-top: 30px;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
-    max-width: 30vw;
 }
 
 .news .elem .inline,
 .feedback .elem .inline,
-.news--details .other-news .inline{
+.news--details .inline,
+.feedback--details .elem .inline {
     display: flex;
     justify-content: flex-start;
     gap: 1vw;
@@ -576,7 +577,8 @@ form .btn {
 
 .news .elem .inline .date,
 .feedback .elem .inline .date,
-.news--details .date {
+.news--details .date,
+.feedback--details .elem .inline .date {
     color: #646464;
     font-size: 16px;
 }
@@ -589,7 +591,8 @@ form .btn {
 
 .news .elem a,
 .feedback .elem a,
-.news--details .other-news a {
+.news--details .other-news a,
+.feedback--details a {
     color: #000;
     cursor: pointer;
     transition: 300ms;
@@ -597,7 +600,8 @@ form .btn {
 
 .news .elem a:hover,
 .feedback .elem a:hover,
-.news--details .other-news a:hover {
+.news--details .other-news a:hover,
+.feedback--details a:hover{
     color: #545454;
 }
 
@@ -622,7 +626,8 @@ form .btn {
     font-size: 18px;
 }
 
-.news--details .details .full_text {
+.news--details .details .full_text,
+.feedback--details .elem .full_text {
     font-size: 20px;
     margin: 0 50px;
     margin-top: 40px;
@@ -656,7 +661,8 @@ form .btn {
     margin-bottom: 15px;
 }
 
-.news--details .other-news .elem .date {
+.news--details .other-news .elem .date,
+.feedback--details .elem .date {
     margin-top: 5px;
 }
 
@@ -681,6 +687,13 @@ form .btn {
 .news .elem h4 {
     font-weight: 500;
     font-size: 18px;
+}
+
+.feedback--details .elem {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid #000000;
 }
 
 /* Footer */

@@ -13,7 +13,7 @@
                         <h4>{{ el.user_name }}</h4>
                         <h4 class="date">{{ el.date }}</h4>
                     </div>
-                    <a href='{% url "feedback_details" el.id %}' class="a"><h3>{{ el.title }}</h3></a>
+                    <a href='{% url "feedback_details" el.id %}'><h3>{{ el.title }}</h3></a>
                     <p>{{ el.full_text }}</p>
                 </div>
                 {% endfor %}
@@ -24,7 +24,7 @@
         {% if user.is_authenticated %}
         <h2 class="h2--feedback">Make us know</h2>
         <form method="post" class="news-form">
-            {% csrf_token %}
+        {% csrf_token %}
             {{ form.title }}
             {{ form.user_name }}
             {{ form.full_text }}

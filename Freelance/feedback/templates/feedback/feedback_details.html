@@ -4,14 +4,17 @@
 
 {% block content %}
     <div class="wrapper">
-        <h1 class="h1">{{ feedback.title }}</h1>
-        <div class="news--details">
-            <p>{{ feedback.date }}</p>
-            <p>{{ feedback.user_name }}</p>
-            <p>{{ feedback.full_text }}</p>
-            <a href="{% url 'feedback_index' %}">Go to feedback page</a><br><br><br>
-            <a href="{% url 'feedback_update' feedback.id %}" class="btn">Update</a>
-            <a href="{% url 'feedback_delete' feedback.id %}" class="btn">Delete</a>
+        <h2 class="h2">{{ feedback.title }}</h2>
+        <div class="feedback--details container">
+            <div class="elem">
+                <div class="inline">
+                    <h3>{{ feedback.user_name }}</h3>
+                    <p class="date">{{ feedback.date }}</p>
+                </div>
+                <p class="full_text">{{ feedback.full_text }}</p><br><br>
+                <a href="{% url 'feedback_update' feedback.id %}" class="btn">Update</a>
+                <a href="{% url 'feedback_delete' feedback.id %}" class="btn">Delete</a>
+            </div>
         </div>
     </div>
 {% endblock %}

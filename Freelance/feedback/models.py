@@ -3,7 +3,7 @@ from django.db import models
 
 class Feedback(models.Model):
     title = models.CharField('Title', max_length=100)
-    user_name = models.CharField('User Name', max_length=30)
+    user_name = models.CharField('User Name', max_length=30, default='')
     full_text = models.TextField('Text')
     date = models.DateTimeField('Publication Date', auto_now_add=True)
 
