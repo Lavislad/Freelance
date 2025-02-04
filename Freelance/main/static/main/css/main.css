@@ -545,7 +545,7 @@ form .btn {
 
 .news .elem {
     background: #fff;
-    padding: 50px;
+    padding: 40px;
     border: 1px solid #000000;
     flex: 1 1 30%;
     border-radius: 10px;
@@ -553,15 +553,16 @@ form .btn {
 
 .news .elem h3,
 .feedback .elem h3 {
-    font-size: 40px;
+    font-size: 24px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    max-width: fit-content;
 }
 
 .news .elem p,
 .feedback .elem p {
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -570,7 +571,7 @@ form .btn {
 .news--details .inline,
 .feedback--details .elem .inline {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 1vw;
     align-items: center;
 }
@@ -580,7 +581,9 @@ form .btn {
 .news--details .date,
 .feedback--details .elem .inline .date {
     color: #646464;
-    font-size: 16px;
+    font-size: 14px;
+    width: fit-content;
+    text-align: right;
 }
 
 .news-form {
@@ -801,6 +804,10 @@ footer hr {
 
     .hero {
         margin-top: 0;
+    }
+
+    .news .elem .inline {
+        display: block;
     }
 }
 
@@ -1042,5 +1049,28 @@ footer hr {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .feedback .elem,
+    .news .elem {
+        padding: 20px;
+    }
+
+    .feedback .elem h3,
+    .news .elem h3 {
+        font-size: 24px;
+    }
+
+    .feedback .elem .inline .date,
+    .news .elem .inline .date {
+        font-size: 14px;
+    }
+
+    .news .elem {
+        flex: 1 1 100%;
+    }
+
+    .news .elem .inline {
+        display: block;
     }
 }
