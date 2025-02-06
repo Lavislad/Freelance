@@ -569,11 +569,16 @@ form .btn {
 .news .elem .inline,
 .feedback .elem .inline,
 .news--details .inline,
-.feedback--details .elem .inline {
+.feedback--details .elem .inline,
+.news--details .inline-start  {
     display: flex;
     justify-content: space-between;
     gap: 1vw;
     align-items: center;
+}
+
+.news--details .inline-start {
+    justify-content: flex-start;
 }
 
 .news .elem .inline .date,
@@ -669,7 +674,7 @@ form .btn {
     margin-top: 5px;
 }
 
-.news--details .other-news a.inline {
+.news--details .other-news a.inline-start {
     margin-bottom: 10px;
 }
 
