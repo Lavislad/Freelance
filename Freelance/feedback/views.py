@@ -28,8 +28,7 @@ def feedback_index(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
-            saved_form = form.save()
-            request.user.feedbacks.append(saved_form.id)
+            form.save()
             return redirect('feedback_index')
         else:
             error = 'Form is invalid'
