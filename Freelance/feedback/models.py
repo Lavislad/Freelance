@@ -2,9 +2,8 @@ from django.db import models
 
 
 class Feedback(models.Model):
-    id = models.BigAutoField(auto_created=True, primary_key=True)
     title = models.CharField('Title', max_length=100)
-    user_name = models.CharField('User Name', max_length=30, default='')
+    author = models.CharField('User Name', max_length=30, default='default')
     full_text = models.TextField('Text')
     date = models.DateTimeField('Publication Date', auto_now_add=True)
 

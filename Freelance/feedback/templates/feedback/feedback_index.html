@@ -10,7 +10,7 @@
                 {% for el in feedback %}
                 <div class="elem">
                     <div class="inline">
-                        <h4>{{ el.user_name }}</h4>
+                        <h4>{{ el.author }}</h4>
                         <h4 class="date">{{ el.date }}</h4>
                     </div>
                     <a href='{% url "feedback_details" el.id %}'><h3>{{ el.title }}</h3></a>

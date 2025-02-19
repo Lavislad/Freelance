@@ -1,6 +1,7 @@
 # from django.contrib.gis.gdal.prototypes.srs import from_user_input
 from django.shortcuts import render, redirect
 from django.template.context_processors import request
+from pyexpat.errors import messages
 
 from .models import Feedback
 from .forms import FeedbackForm
@@ -27,8 +28,11 @@ def feedback_index(request):
     error = ''
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
+        print(form)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
             return redirect('feedback_index')
         else:
             error = 'Form is invalid'
