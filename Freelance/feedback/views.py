@@ -28,7 +28,6 @@ def feedback_index(request):
     error = ''
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
-        print(form)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.author = request.user

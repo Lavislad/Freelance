@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block active %}
+    <li class=""><a href="{% url 'index' %}">Main</a></li>
+    <li class=""><a href="#">News</a></li>
+    <li class=""><a href="#">Feedback</a></li>
+    <li class="btn"><a href="#" class="nav-btn">Log in</a></li>
+{% endblock %}
+{% block content %}
+    <div class="wrapper-profile">
+        <div class="profile">
+            <aside>
+                <div class="aside-elem">
+                    <div class="inline">
+                        <h2>Account</h2>
+                        <div class="line"></div>
+                    </div>
+                    <a href=""><h3>Account info</h3></a>
+                    <a href=""><h3>Account settings</h3></a>
+                </div>
+            </aside>
+            <main>
+                <h1>Hello, {{ user }}</h1>
+            </main>
+        </div>
+    </div>
+{% endblock %}
