@@ -1,9 +1,11 @@
 from django.db import models
+from account.models import User
 
 
 class Feedback(models.Model):
     title = models.CharField('Title', max_length=100)
-    author = models.CharField('User Name', max_length=30, default='default')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    # author_name = models.CharField(default='default_author_name')
     full_text = models.TextField('Text')
     date = models.DateTimeField('Publication Date', auto_now_add=True)
 

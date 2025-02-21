@@ -1,10 +1,10 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models import BigAutoField
 
 
 class User(AbstractUser):
     image = models.ImageField(upload_to='users_images', blank=True, null=True, verbose_name='Аватар')
-    feedbacks = models.JSONField()
     # identifier = models.CharField(max_length=40, unique=True)
     # USERNAME_FIELD = "identifier"
 
@@ -14,4 +14,4 @@ class User(AbstractUser):
         verbose_name_plural = 'Пользователи'
 
     def __str__(self):
-        return self.username
+        return self.id
