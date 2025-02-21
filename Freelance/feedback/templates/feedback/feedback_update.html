@@ -9,7 +9,6 @@
         <form method="post" class="news-form">
             {% csrf_token %}
             {{ form.title }}
-            {{ form.user_name }}
             {{ form.full_text }}
             <button class="btn" type="submit">Submit</button>
             <p>{{ error }}</p>
