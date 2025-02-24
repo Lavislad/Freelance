@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.template.context_processors import request
 from pyexpat.errors import messages
+from sqlparse.sql import Where
 
 from .models import Feedback
 from .forms import FeedbackForm
@@ -35,7 +36,7 @@ def feedback_index(request):
             return redirect('feedback_index')
         else:
             error = 'Form is invalid'
-    feedback = Feedback.objects.order_by('-date')
+    feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')
     form = FeedbackForm()
     data = {
         'title': 'Feedback Page',

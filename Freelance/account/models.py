@@ -14,4 +14,4 @@ class User(AbstractUser):
         verbose_name_plural = 'Пользователи'
 
     def __str__(self):
-        return self.id
+        return f'{self.id} | {self.image}'

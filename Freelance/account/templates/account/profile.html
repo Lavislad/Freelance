@@ -21,7 +21,12 @@
                 </div>
             </aside>
             <main>
-                <h1>Hello, {{ user }}</h1>
+                <h1>Hello, {{ user.username }}</h1>
+                {% for i in user_feedback %}
+                <div style="margin-top: 10px; padding: 20px; border: 1px #ccc solid; border-radius: 20px;">
+                    <h2>{{ i.title }}</h2>
+                </div>
+                {% endfor %}
             </main>
         </div>
     </div>

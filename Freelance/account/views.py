@@ -5,6 +5,9 @@ from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib import auth
 from django.urls import reverse
 
+from feedback.models import Feedback
+
+
 def login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -44,4 +47,8 @@ def logout(request):
     return redirect('index')
 
 def profile(request):
-    return render(request, 'account/profile.html')
+    feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')
+    data = {
+        'user_feedback': feedback
+    }
+    return render(request, 'account/profile.html', data)
