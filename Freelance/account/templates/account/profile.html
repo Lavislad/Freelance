@@ -18,9 +18,7 @@
                     <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
                     <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
-                    {% if user.is_authenticated %}<li class="profile"><a href="{% url 'profile' %}"><img src="{% static 'main/img/NoAvatarImage.svg' %}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></a></li>
-                    {% else %}<li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
-                    {% endif %}
+                    <li></li>
                 </ul>
             </nav>
         </header>
@@ -30,12 +28,18 @@
         <div class="profile">
             <aside>
                 <div class="user--info">
-                    <img src="{% static 'main/img/NoAvatarImage.svg' %}" alt="">
-                    <h3>{{ request.user.username }}</h3>
-                    {% if request.user.first_name and request.user.last_name %}
-                    <h3>{{ request.user.first_name }}</h3>
-                    <h3>{{ request.user.last_name }}</h3>
-                    {% endif %}
+                    <div class="inline">
+                        <img src="{% static 'main/img/NoAvatarImage.svg' %}" alt="">
+                        <div>
+                            <p style="font-weight: 700; font-size: 20px;">{{ request.user.username }}</p>
+                            {% if request.user.first_name and request.user.last_name %}
+                            <div class="inline">
+                                <p class="small-text">{{ request.user.first_name }}</p>
+                                <p class="small-text">{{ request.user.last_name }}</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
                 <div class="elem">
                     <h2>Account</h2>

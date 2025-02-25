@@ -91,7 +91,8 @@ header {
     align-items: center;
 }
 
-.header1 {
+.header1,
+.header1-profile {
     background: #fff;
     position: sticky;
     width: 100%;
@@ -100,6 +101,11 @@ header {
     z-index: 100;
     transition: border-bottom 300ms ease-in-out;
     border-bottom: 0 solid #fff;
+}
+
+.header1-profile {
+    width: 88vw;
+    left: 12vw;
 }
 
 .header-border {
@@ -722,21 +728,13 @@ form .btn {
     top: 0;
     z-index: 1000;
     background: transparent;
-    padding: 0 20px;
+    padding: 30px 20px;
     min-height: 100%;
 }
 
 .profile .elem {
     border-bottom: 2px solid #f3f3f3;
     margin: 40px 0;
-}
-
-.profile .inline {
-    margin-bottom: 10px;
-}
-
-.profile aside .inline h2 {
-    font-size: 24px;
 }
 
 .profile aside h3 {
@@ -749,6 +747,22 @@ form .btn {
 
 .profile aside h3:hover {
     background: #ccc;
+}
+
+.profile aside .user--info img {
+    max-width: 36px;
+}
+
+.profile aside .user--info .inline {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5%;
+    align-items: center;
+}
+
+.profile .small-text {
+    font-size: 12px;
+    color: #434343;
 }
 
 .profile main {
