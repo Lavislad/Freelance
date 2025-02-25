@@ -1,33 +1,81 @@
-{% extends 'main/layout.html' %}
 {% load static %}
-{% block title %}Profile{% endblock %}
-{% block active %}
-    <li class=""><a href="{% url 'index' %}">Main</a></li>
-    <li class=""><a href="#">News</a></li>
-    <li class=""><a href="#">Feedback</a></li>
-    <li class="btn"><a href="#" class="nav-btn">Log in</a></li>
-{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/df8e014d3f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header1">
+        <header class="container">
+            <span><a href="{% url 'index' %}"><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg"></a></span>
+            <nav>
+                <button class="menu-btn">Menu</button>
+                <ul class="menu">
+                    <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}">Main</a></li>
+                    <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
+                    <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
+                    {% if user.is_authenticated %}<li class="profile"><a href="{% url 'profile' %}"><img src="{% static 'main/img/NoAvatarImage.svg' %}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></a></li>
+                    {% else %}<li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+    </div>
+
     <div class="wrapper-profile">
         <div class="profile">
             <aside>
-                <div class="aside-elem">
-                    <div class="inline">
-                        <h2>Account</h2>
-                        <div class="line"></div>
-                    </div>
+                <div class="user--info">
+                    <img src="{% static 'main/img/NoAvatarImage.svg' %}" alt="">
+                    <h3>{{ request.user.username }}</h3>
+                    {% if request.user.first_name and request.user.last_name %}
+                    <h3>{{ request.user.first_name }}</h3>
+                    <h3>{{ request.user.last_name }}</h3>
+                    {% endif %}
+                </div>
+                <div class="elem">
+                    <h2>Account</h2>
                     <a href=""><h3>Account info</h3></a>
                     <a href=""><h3>Account settings</h3></a>
                 </div>
+                <div class="elem">
+                    <h2>Feedbacks</h2>
+                    <a href=""><h3>Your feedbacks</h3></a>
+                </div>
+                {% if request.user.is_superuser %}
+                <div class="elem">
+                    <h2>News</h2>
+                    <a href=""><h3>Create the news</h3></a>
+                </div>
+                {% endif %}
             </aside>
             <main>
                 <h1>Hello, {{ user.username }}</h1>
-                {% for i in user_feedback %}
+                {% for el in user_feedback %}
                 <div style="margin-top: 10px; padding: 20px; border: 1px #ccc solid; border-radius: 20px;">
-                    <h2>{{ i.title }}</h2>
+                    <h2>{{ el.title }}</h2>
+                    <p>{{ el.full_text }}</p>
                 </div>
                 {% endfor %}
             </main>
         </div>
     </div>
-{% endblock %}
+
+ <script>
+        window.addEventListener('scroll', () => {
+        document.querySelector('.header1').classList.toggle('header-border', window.scrollY > 50);
+        });
+
+        document.querySelector('.menu-btn').
+        addEventListener('click', function() {
+            const menu = document.querySelector('header nav ul');
+            menu.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
