@@ -6,22 +6,21 @@
     <div class="wrapper">
         <h1 class="h1">Check the news</h1>
         {% if news %}
-            <div class="news container">
-                {% for el in news %}
-                <div class="elem">
-                    <div class="inline">
-                        <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
-                        <h4 class="date">{{ el.date }}</h4>
-                    </div>
-                    <p>{{ el.anons }}</p>
-
+        <div class="news container">
+            {% for el in news %}
+            <div class="elem">
+                <div class="inline">
+                    <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
+                    <h4 class="date">{{ el.date }}</h4>
                 </div>
-                {% endfor %}
-        {% else %}
-            <p>You have no notes</p>
+                <p>{{ el.anons }}</p>
+
             </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>You have no notes</p>
         {% endif %}
-    </div>
     {% if user.is_authenticated %}
         <h2 class="h2 h2--feedback">Create the news</h2>
         <form method="post" class="news-form">
@@ -34,6 +33,6 @@
             <p>{{ error }}</p>
         </form>
     {% endif %}
-</div>
+    </div>
 
 {% endblock %}
