@@ -728,13 +728,13 @@ form .btn {
     top: 0;
     z-index: 1000;
     background: transparent;
-    padding: 30px 20px;
+    padding: 0 20px;
     min-height: 100%;
 }
 
 .profile .elem {
     border-bottom: 2px solid #f3f3f3;
-    margin: 40px 0;
+    margin-bottom: 40px;
 }
 
 .profile aside h3 {
@@ -747,6 +747,12 @@ form .btn {
 
 .profile aside h3:hover {
     background: #ccc;
+}
+
+.profile aside .user--info {
+    height: 100px;
+    padding: 25px 0;
+    box-sizing: border-box;
 }
 
 .profile aside .user--info img {

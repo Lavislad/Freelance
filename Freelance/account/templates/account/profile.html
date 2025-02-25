@@ -18,7 +18,9 @@
                     <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
                     <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
-                    <li></li>
+                    {% if user.is_authenticated %}
+                    <li class="btn"><a href="{% url 'logout' %}" class="nav-btn">Log out</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>
@@ -42,9 +44,9 @@
                     </div>
                 </div>
                 <div class="elem">
-                    <h2>Account</h2>
-                    <a href=""><h3>Account info</h3></a>
-                    <a href=""><h3>Account settings</h3></a>
+                    <h2>Profile</h2>
+                    <a href=""><h3>Profile info</h3></a>
+                    <a href=""><h3>Profile settings</h3></a>
                 </div>
                 <div class="elem">
                     <h2>Feedbacks</h2>

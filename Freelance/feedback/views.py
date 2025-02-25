@@ -36,7 +36,7 @@ def feedback_index(request):
             return redirect('feedback_index')
         else:
             error = 'Form is invalid'
-    feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')
+    feedback = Feedback.objects.all().order_by('-date')
     form = FeedbackForm()
     data = {
         'title': 'Feedback Page',
