@@ -46,7 +46,6 @@
                 <div class="elem">
                     <h2>Profile</h2>
                     <a href=""><h3>Profile info</h3></a>
-                    <a href=""><h3>Profile settings</h3></a>
                 </div>
                 <div class="elem">
                     <h2>Feedbacks</h2>
@@ -60,13 +59,12 @@
                 {% endif %}
             </aside>
             <main>
-                <h1>Hello, {{ user.username }}</h1>
-                {% for el in user_feedback %}
-                <div style="margin-top: 10px; padding: 20px; border: 1px #ccc solid; border-radius: 20px;">
-                    <h2>{{ el.title }}</h2>
-                    <p>{{ el.full_text }}</p>
+                <div class="profile-container">
+                    <div class="hero--profile">
+                        <img src="{{ user.image.url }}" alt="">
+                        <h1>{{ user.username }}</h1>
+                    </div>
                 </div>
-                {% endfor %}
             </main>
         </div>
     </div>

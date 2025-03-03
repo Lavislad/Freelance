@@ -259,7 +259,8 @@ nav .profile {
     position: relative;
 }
 
-.hero {
+.hero,
+.hero--profile {
     /* width: 40%; */
     margin-top: 60px;
     display: flex;
@@ -775,6 +776,23 @@ form .btn {
     width: 100%;
     margin-left: 12vw;
     padding: 0 20px;
+}
+
+.profile-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero--profile {
+    width: clamp(50%, 1080px, 80%);
+    justify-content: flex-start;
+    gap: 4vw;
+}
+
+.hero--profile img {
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #ccc;
 }
 
 /* Footer */
