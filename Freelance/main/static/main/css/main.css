@@ -96,8 +96,8 @@ header {
     background: #fff;
     position: sticky;
     width: 100%;
-    top: -1px;
     left: 0;
+    top: 0;
     z-index: 100;
     transition: border-bottom 300ms ease-in-out;
     border-bottom: 0.6px solid #fff;
@@ -793,6 +793,17 @@ form .btn {
     width: 250px;
     border-radius: 50%;
     box-shadow: 5px 5px 10px #ccc;
+}
+
+.hero--profile .info .inline {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1vw;
+}
+
+.hero--profile .info .inline h3 {
+    color: #434343;
+    font-weight: 700;
 }
 
 /* Footer */

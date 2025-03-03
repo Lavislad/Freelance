@@ -31,7 +31,7 @@
             <aside>
                 <div class="user--info">
                     <div class="inline">
-                        <img src="{% static 'main/img/NoAvatarImage.svg' %}" alt="">
+                        <img src="{{ user.image.url }}" alt="">
                         <div>
                             <p style="font-weight: 700; font-size: 20px;">{{ request.user.username }}</p>
                             {% if request.user.first_name and request.user.last_name %}
@@ -62,7 +62,13 @@
                 <div class="profile-container">
                     <div class="hero--profile">
                         <img src="{{ user.image.url }}" alt="">
-                        <h1>{{ user.username }}</h1>
+                        <div class="info">
+                            <h1>{{ user.username }}</h1>
+                            <div class="inline">
+                                <h3>{{ user.first_name }}</h3>
+                                <h3>{{ user.last_name }}</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
