@@ -1,91 +1,30 @@
+{% extends 'main/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-    <script src="https://kit.fontawesome.com/df8e014d3f.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="header1">
-        <header class="container">
-            <span><a href="{% url 'index' %}"><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg"></a></span>
-            <nav>
-                <button class="menu-btn">Menu</button>
-                <ul class="menu">
-                    <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}">Main</a></li>
-                    <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
-                    <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
-                    {% if user.is_authenticated %}
-                    <li class="btn"><a href="{% url 'logout' %}" class="nav-btn">Log out</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
-        </header>
-    </div>
+{% block title %}Profile{% endblock %}
+{% block content %}
 
-    <div class="wrapper-profile">
-        <div class="profile">
-            <aside>
-                <div class="user--info">
+    <header class="profile">
+        <nav class="profile">
+            <ul>
+                <li><a href="#">Account Info</a></li>
+                <li><a href="">Your Feedbacks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper" style="min-height: 90vh; padding: 0">
+        <div class="profile-container">
+            <div class="hero--profile">
+                <img src="{{ user.image.url }}" alt="">
+                <div class="info">
+                    <h1>{{ user.username }}</h1>
                     <div class="inline">
-                        <img src="{{ user.image.url }}" alt="">
-                        <div>
-                            <p style="font-weight: 700; font-size: 20px;">{{ request.user.username }}</p>
-                            {% if request.user.first_name and request.user.last_name %}
-                            <div class="inline">
-                                <p class="small-text">{{ request.user.first_name }}</p>
-                                <p class="small-text">{{ request.user.last_name }}</p>
-                            </div>
-                            {% endif %}
-                        </div>
+                        <h3>{{ user.first_name }}</h3>
+                        <h3>{{ user.last_name }}</h3>
                     </div>
                 </div>
-                <div class="elem">
-                    <h2>Profile</h2>
-                    <a href=""><h3>Profile info</h3></a>
-                </div>
-                <div class="elem">
-                    <h2>Feedbacks</h2>
-                    <a href=""><h3>Your feedbacks</h3></a>
-                </div>
-                {% if request.user.is_superuser %}
-                <div class="elem">
-                    <h2>News</h2>
-                    <a href=""><h3>Create the news</h3></a>
-                </div>
-                {% endif %}
-            </aside>
-            <main>
-                <div class="profile-container">
-                    <div class="hero--profile">
-                        <img src="{{ user.image.url }}" alt="">
-                        <div class="info">
-                            <h1>{{ user.username }}</h1>
-                            <div class="inline">
-                                <h3>{{ user.first_name }}</h3>
-                                <h3>{{ user.last_name }}</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
+            </div>
         </div>
     </div>
 
- <script>
-        window.addEventListener('scroll', () => {
-        document.querySelector('.header1').classList.toggle('header-border', window.scrollY > 50);
-        });
-
-        document.querySelector('.menu-btn').
-        addEventListener('click', function() {
-            const menu = document.querySelector('header nav ul');
-            menu.classList.toggle('open');
-        });
-    </script>
-
-</body>
-</html>
+{% endblock %}

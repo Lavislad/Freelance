@@ -29,17 +29,11 @@ img {
     /* stroke: inherit;  */
 }
 
-.wrapper,
-.wrapper-profile {
+.wrapper {
     background: linear-gradient(rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
     width: 100%;
     padding: 80px 0;
     min-height: 38vh;
-}
-
-.wrapper-profile {
-    padding: 0;
-    min-height: 90vh;
 }
 
 .container {
@@ -91,8 +85,7 @@ header {
     align-items: center;
 }
 
-.header1,
-.header1-profile {
+.header1 {
     background: #fff;
     position: sticky;
     width: 100%;
@@ -101,11 +94,6 @@ header {
     z-index: 100;
     transition: border-bottom 300ms ease-in-out;
     border-bottom: 0.6px solid #fff;
-}
-
-.header1-profile {
-    width: 88vw;
-    left: 12vw;
 }
 
 .header-border {
@@ -717,11 +705,6 @@ form .btn {
     border: 1px solid #000000;
 }
 
-.profile {
-    display: flex;
-    justify-content: flex-start;
-}
-
 .profile aside {
     box-sizing: border-box;
     width: 12vw;
@@ -779,7 +762,8 @@ form .btn {
 }
 
 .profile-container {
-    width: 80%;
+    max-width: 1080px;
+    min-width: 30vw;
     margin: 0 auto;
 }
 
@@ -804,6 +788,23 @@ form .btn {
 .hero--profile .info .inline h3 {
     color: #434343;
     font-weight: 700;
+}
+
+header.profile {
+    position: sticky;
+    top: 102px;
+    background: #fff;
+    border-bottom: 0.6px solid #b4b4b4;
+}
+
+nav.profile {
+    width: fit-content;
+}
+
+nav.profile ul {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
 }
 
 /* Footer */
