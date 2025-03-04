@@ -212,7 +212,8 @@ header nav ul li.btn a:hover,
 
 header nav ul li.hover a::before,
 header nav ul li.hover.active a::before,
-header.profile nav.profile ul li.active2 a::before {
+header.profile nav.profile ul li.active2 a::before,
+.dropdown-menu .item a::before {
     content: '';
     display: block;
     width: 0%;
@@ -225,12 +226,14 @@ header.profile nav.profile ul li.active2 a::before {
     transition: all 500ms;
 }
 
-header nav ul li.hover.active a::before {
+header nav ul li.hover.active a::before,
+.dropdown-menu .item.active a::before {
     width: 35px;
 }
 
 header nav ul li:hover a::before,
-header nav ul li.active:hover a::before {
+header nav ul li.active:hover a::before,
+.dropdown-menu .item:hover a::before {
     width: 100%;
     transform: translateX(20px);
 }
@@ -260,7 +263,7 @@ nav .profile {
     position: absolute;
     background: #fff;
     border: 1px solid #464646;
-    padding: 10px 25px;
+    padding: 20px 40px;
     border-radius: 20px;
     top: 50px;
     left: -50px;
@@ -271,11 +274,14 @@ nav .profile {
 
 .dropdown-menu ul {
     flex-direction: column;
+    gap: 20px;
 }
 
 .dropdown-menu .item {
     display: block;
     width: 100%;
+    border-radius: 10px;
+    transition: 300ms;
 }
 
 .dropdown-menu-open {

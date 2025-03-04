@@ -22,7 +22,7 @@
                     <li class="profile"><button href="" class="dropdown-btn"><img src="{{ user.image.url }}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></button>
                         <div class="dropdown-menu">
                             <ul>
-                                <li class="item"><a href="{% url 'profile' %}">Profile</a></li>
+                                <li class="item {% if title == 'Profile' %}active{% endif %}"><a href="{% url 'profile' %}">Profile</a></li>
                                 <li class="item"><a href="{% url 'logout' %}" style="white-space: nowrap;">Log out</a></li>
                             </ul>
                         </div>
