@@ -18,8 +18,17 @@
                     <li class="{% if title == 'Main Page' %}active{% endif %} hover"><a href="{% url 'index' %}">Main</a></li>
                     <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
                     <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
-                    {% if user.is_authenticated %}<li class="profile"><a href="{% url 'profile' %}"><img src="{{ user.image.url }}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></a></li>
-                    {% else %}<li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="profile"><button href="" class="dropdown-btn"><img src="{{ user.image.url }}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></button>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li class="item"><a href="{% url 'profile' %}">Profile</a></li>
+                                <li class="item"><a href="{% url 'logout' %}" style="white-space: nowrap;">Log out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="btn"><a href="{% url 'login' %}" class="nav-btn">Log in</a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -71,6 +80,12 @@
         addEventListener('click', function() {
             const menu = document.querySelector('header nav ul');
             menu.classList.toggle('open');
+        });
+
+        document.querySelector('.dropdown-btn').
+        addEventListener('click', function() {
+            const menu = document.querySelector('.dropdown-menu');
+            menu.classList.toggle('dropdown-menu-open');
         });
 
 //        window.addEventListener('scroll', () => {
