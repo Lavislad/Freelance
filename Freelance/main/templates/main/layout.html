@@ -62,15 +62,6 @@
         </div>
     </footer>
 
-    {% if title == 'Profile' %}
-    <script>
-        window.addEventListener('scroll', () => {
-        document.querySelector('.header1').classList.add('header-border');
-        });
-    </script>
-
-    {% else %}
-
     <script>
         window.addEventListener('scroll', () => {
         document.querySelector('.header1').classList.toggle('header-border', window.scrollY > 50);
@@ -119,7 +110,5 @@
 //        document.querySelector('.header1').classList.toggle('.header1', window.scrollY < 50);
 //        });
     </script>
-
-    {% endif %}
 </body>
 </html>
