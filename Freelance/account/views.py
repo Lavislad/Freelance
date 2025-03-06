@@ -47,11 +47,7 @@ def logout(request):
     return redirect('index')
 
 def profile(request):
-    feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')
-    data = {
-        'user_feedback': feedback
-    }
-    return render(request, 'account/profile.html', data)
+    return render(request, 'account/profile.html')
 
 def user_feedbacks(request):
     feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')

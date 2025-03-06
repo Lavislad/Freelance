@@ -45,3 +45,22 @@ def feedback_index(request):
         'error': error
     }
     return render(request, 'feedback/feedback_index.html', data)
+
+def create_feedback(request):
+    error = ''
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
+            return redirect('profile')
+        else:
+            error = 'Form is invalid'
+    form = FeedbackForm()
+    data = {
+        'title': 'Create the feedback',
+        'form': form,
+        'error': error
+    }
+    return render(request, 'feedback/create_feedback.html', data)

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <form method="post" class="news-form">
+        {% csrf_token %}
+            {{ form.title }}
+            {{ form.user_name }}
+            {{ form.full_text }}
+            {{ form.date }}
+            <button class="btn" type="submit">Submit</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
+{% endblock %}

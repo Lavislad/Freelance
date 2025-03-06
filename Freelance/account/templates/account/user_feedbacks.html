@@ -13,9 +13,12 @@
     </header>
 
     <div class="wrapper" style="min-height: 90vh; padding: 0">
-        <h1>Your Feedbacks</h1>
         {% if feedback %}
-        <div class="feedback">
+        <div class="feedback container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1>Your Feedbacks</h1>
+                <a href="{% url 'create_feedback' %}" class="a">Create a feedback</a>
+            </div>
         {% for i in feedback %}
             <div class="elem">
                     <div class="inline">

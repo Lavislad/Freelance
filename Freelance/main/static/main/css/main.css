@@ -607,7 +607,8 @@ form .btn {
 .feedback .elem .inline,
 .news--details .inline,
 .feedback--details .elem .inline,
-.news--details .inline-start {
+.news--details .inline-start,
+{
     display: flex;
     justify-content: space-between;
     gap: 1vw;
@@ -782,12 +783,11 @@ form .btn {
     font-weight: 700;
 }
 
-.hero--profile .info a {
+.a {
     color: #000;
-}
-
-.hero--profile .info a:hover {
-    border-bottom: 1px #000 solid;
+    border: 1px #000 solid;
+    padding: 2px 5px;
+    border-radius: 5px;
 }
 
 header.profile {
