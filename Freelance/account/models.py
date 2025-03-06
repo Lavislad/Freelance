@@ -3,15 +3,17 @@ from django.db import models
 
 
 class User(AbstractUser):
-    image = models.ImageField(upload_to='users_images', blank=True, null=True, verbose_name='Аватар')
-    feedbacks = models.JSONField()
+    image = models.ImageField(
+        upload_to="users_images", blank=True, null=True, verbose_name="Аватар"
+    )
+    # feedbacks = models.JSONField()
     # identifier = models.CharField(max_length=40, unique=True)
     # USERNAME_FIELD = "identifier"
 
     class Meta:
-        db_table = 'user'
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+        db_table = "user"
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
 
     def __str__(self):
         return self.username

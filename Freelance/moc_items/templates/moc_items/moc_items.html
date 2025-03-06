@@ -1,0 +1,45 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- {% if data %} -->
+        <!--     {% for el in data %} -->
+        <!--         <div>{{ el.title }}</div> -->
+        <!--     {% endfor %} -->
+        <!-- {% else %} -->
+        <!--     <div>no data</div> -->
+        <!-- {% endif %} -->
+
+        {% if data %}
+            {% for el in data %}
+            <div style="border: 2px black solid; margin-bottom: 20px; display: flex; flex-direction: row; height: 130px; margin: 20px; padding: 10px; gap: 20px; border-radius: 5px">
+                <div style="border: 2px black solid; padding: 10px; width: 650px; border-radius: 5px">
+                <p>{{el.title}}</p>
+                <p>{{el.description}}</p>
+
+                <!-- <p>{{el.duration}}</p> -->
+                <!-- <p>{{el.location}}</p> -->
+                </div>
+
+                <div style="border: 2px black solid; padding: 10px; border-radius: 5px">
+                    <p>Требуемые навыки:</p>
+                    {% for skill in el.skills %}
+                    <p>{{skill}}</p>
+                    {% endfor %}
+                </div>
+                <div style="border: 2px black solid; padding: 10px; border-radius: 5px">
+                    <p>ЗП:</p>
+                    <p>{{el.budget}}</p>
+                </div>
+                <div style="border: 2px black solid; padding: 10px; border-radius: 5px">
+                    <p>золупа:</p>
+                    <p>{{el.duration}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+{% endblock %}
