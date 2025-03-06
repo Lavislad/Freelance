@@ -12,7 +12,7 @@
                     <p class="date">{{ feedback.date }}</p>
                 </div>
                 <p class="full_text">{{ feedback.full_text }}</p><br><br>
-                {% if user.is_superuser %}
+                {% if user.is_superuser or feedback.author_id == user.id %}
                 <a href="{% url 'feedback_update' feedback.id %}" class="btn">Update</a>
                 <a href="{% url 'feedback_delete' feedback.id %}" class="btn">Delete</a>
                 {% endif %}

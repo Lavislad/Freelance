@@ -17,7 +17,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user:
                 auth.login(request, user)
-                return redirect('index')
+                return redirect('profile')
     else:
         form = UserLoginForm()
     data = {
@@ -34,7 +34,7 @@ def register(request):
             password = request.POST['password1']
             user = auth.authenticate(username=username, password=password)
             auth.login(request, user)
-            return redirect('index')
+            return redirect('profile')
     else:
         form = UserRegistrationForm()
     data = {
@@ -52,3 +52,10 @@ def profile(request):
         'user_feedback': feedback
     }
     return render(request, 'account/profile.html', data)
+
+def user_feedbacks(request):
+    feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')
+    data = {
+        'feedback': feedback
+    }
+    return render(request, 'account/user_feedbacks.html', data)

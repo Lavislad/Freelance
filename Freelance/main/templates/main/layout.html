@@ -19,11 +19,11 @@
                     <li class="{% if title == 'News Page' %}active{% endif %} hover"><a href="{% url 'news_index' %}">News</a></li>
                     <li class="{% if title == 'Feedback Page' %}active{% endif %} hover"><a href="{% url 'feedback_index' %}">Feedback</a></li>
                     {% if user.is_authenticated %}
-                    <li class="profile"><button href="" class="dropdown-btn"><img src="{{ user.image.url }}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></button>
+                    <li class="profile"><button class="dropdown-btn"><img src="{{ user.image.url }}" class="avatar" alt="Avatar"><span>{{ user.username }}</span></button>
                         <div class="dropdown-menu">
                             <ul>
-                                <li class="item {% if title == 'Profile' %}active{% endif %}"><a href="{% url 'profile' %}">Profile</a></li>
-                                <li class="item"><a href="{% url 'logout' %}" style="white-space: nowrap;">Log out</a></li>
+                                <li class="item {% if title == 'Profile' %}active{% endif %}"><a href="{% url 'profile' %}" class="dropdown-a">Profile</a></li>
+                                <li class="item"><a href="{% url 'logout' %}" style="white-space: nowrap;" class="dropdown-a">Log out</a></li>
                             </ul>
                         </div>
                     </li>
