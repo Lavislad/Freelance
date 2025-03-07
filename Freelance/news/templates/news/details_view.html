@@ -25,7 +25,7 @@
                 </a>
                 {% for el in news %}
                     <div class="elem">
-                        <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
+                        <a href="{% url 'news_detail' el.id %}"><h3>{{ el.title }}</h3></a>
                         <p class="date">{{ el.date }}</p>
                         <p>{{ el.anons }}</p>
                     </div>

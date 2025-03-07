@@ -10,7 +10,7 @@
             {% for el in news %}
             <div class="elem">
                 <div class="inline">
-                    <a href="{% url 'news_detail' el.id %}" class="a"><h3>{{ el.title }}</h3></a>
+                    <a href="{% url 'news_detail' el.id %}"><h3>{{ el.title }}</h3></a>
                     <h4 class="date">{{ el.date }}</h4>
                 </div>
                 <p>{{ el.anons }}</p>

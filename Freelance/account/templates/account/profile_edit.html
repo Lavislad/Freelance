@@ -1,0 +1,42 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+    <header class="profile">
+        <nav class="profile profile-container">
+            <ul>
+                <li class="active"><a href="">Account Info</a></li>
+                <li><a href="{% url 'user_feedbacks' %}">Your Feedbacks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper" style="min-height: 90vh; padding: 0">
+        <div class="profile-container">
+            <div class="hero--profile">
+                <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <img src="{{ user.image.url }}" alt="">
+                    <div class="info">
+                        <div>
+                        <label for="id_username">Your first name</label>
+                        <input type="text" placeholder="{{ user.username }}"
+                                id="id_username"
+                                name="username"
+                                value="" required>
+                        {% if form.username.errors %}
+                        <p class="registration--error">{{ form.username.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="inline">
+                        <h3>{{ user.first_name }}</h3>
+                        <h3>{{ user.last_name }}</h3>
+                    </div>
+                    <button class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

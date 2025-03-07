@@ -22,6 +22,7 @@
         {% for i in feedback %}
             <div class="elem">
                     <div class="inline">
+                        <img src="{{ user.image.url }}" alt="" class="user_avatar">
                         <h4>{{ i.author.username }}</h4>
                         <h4 class="date">{{ i.date }}</h4>
                     </div>

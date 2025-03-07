@@ -86,6 +86,15 @@ button {
     margin-top: 80px;
 }
 
+h4 {
+    width: fit-content;
+}
+
+.user_avatar {
+    max-width: 50px;
+    border-radius: 50%;
+}
+
 header {
     padding: 30px 0;
     display: flex;
@@ -607,10 +616,10 @@ form .btn {
 .feedback .elem .inline,
 .news--details .inline,
 .feedback--details .elem .inline,
-.news--details .inline-start,
+.news--details .inline-start
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1vw;
     align-items: center;
 }
@@ -707,8 +716,7 @@ form .btn {
     margin-bottom: 15px;
 }
 
-.news--details .other-news .elem .date,
-.feedback--details .elem .date {
+.news--details .other-news .elem .date {
     margin-top: 5px;
 }
 

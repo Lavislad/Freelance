@@ -10,6 +10,7 @@
                 {% for el in feedback %}
                 <div class="elem">
                     <div class="inline">
+                        <img src="{{ el.author.image.url }}" alt="" class="user_avatar">
                         <h4>{{ el.author.username }}</h4>
                         <h4 class="date">{{ el.date }}</h4>
                     </div>
@@ -20,18 +21,6 @@
         {% else %}
             <p>You have no notes</p>
             </div>
-        {% endif %}
-        {% if user.is_authenticated %}
-        <h2 class="h2--feedback">Make us know</h2>
-        <form method="post" class="news-form">
-        {% csrf_token %}
-            {{ form.title }}
-            {{ form.user_name }}
-            {{ form.full_text }}
-            {{ form.date }}
-            <button class="btn" type="submit">Submit</button>
-            <span>{{ error }}</span>
-        </form>
         {% endif %}
     </div>
 </div>
