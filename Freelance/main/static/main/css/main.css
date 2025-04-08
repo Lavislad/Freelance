@@ -32,11 +32,6 @@ button {
     font-size: 16px;
 }
 
-.img-svg path { 
-    fill: #fff; 
-    /* stroke: inherit;  */
-}
-
 .wrapper {
     background: linear-gradient(rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
     width: 100%;
@@ -45,8 +40,7 @@ button {
 }
 
 .container {
-    max-width: 1440px;
-    min-width: 70vw;
+    width: clamp(20vw, 1440px, 90vw);
     margin: 0 auto;
 }
 
