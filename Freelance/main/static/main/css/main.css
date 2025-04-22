@@ -34,7 +34,7 @@ button {
 .wrapper {
     background: linear-gradient(rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
     width: 100%;
-    min-height: 38vh;
+    min-height: calc(100vh - 100px - 433px);
 }
 
 .container {
