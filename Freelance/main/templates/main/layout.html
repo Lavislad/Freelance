@@ -10,7 +10,10 @@
 <body>
     <div class="header1">
         <header class="container">
-            <span><a href="{% url 'index' %}"><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg" draggable="false"></a></span>
+            <div class="inline">
+                <span><a href="{% url 'index' %}"><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg" draggable="false"></a></span>
+                <span><img src="{% static 'main/img/lavs project white.jpg' %}" alt="" class="lavs-project"></span>
+            </div>
             <nav>
                 <button class="menu-btn">Menu</button>
                 <ul class="menu">

@@ -4,7 +4,11 @@
 
 {% block content %}
     <div class="wrapper">
-        <h1 class="h1">Feedback</h1>
+        <div class="inline container">
+            <h1 class="h1">Feedbacks</h1>
+            <span><a href="{% url 'create_feedback' %}" class="a">Create a feedback</a></span>
+        </div>
+        <hr style="margin: 20px 0;">
         {% if feedback %}
             <div class="feedback container">
                 {% for el in feedback %}
