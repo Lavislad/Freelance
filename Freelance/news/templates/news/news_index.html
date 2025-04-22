@@ -22,7 +22,7 @@
         {% else %}
         <p>You have no notes</p>
         {% endif %}
-    {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
         <h2 class="h2 h2--feedback">Create the news</h2>
         <form method="post" class="news-form">
             {% csrf_token %}
@@ -33,7 +33,7 @@
             <button class="btn" type="submit">Submit</button>
             <p>{{ error }}</p>
         </form>
-    {% endif %}
+        {% endif %}
     </div>
 
 {% endblock %}

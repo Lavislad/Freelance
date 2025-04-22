@@ -5,7 +5,6 @@
 * {
     margin: 0;
     padding: 0;
-/*    max-width: 100%;*/
 }
 
 body {
@@ -22,7 +21,6 @@ a {
 img {
     max-width: 100%;
     max-height: 100%;
-    aspect-ratio: inherit;
 }
 
 button {
@@ -68,7 +66,6 @@ button {
     text-align: center;
     font-size: 50px;
     font-weight: 700;
-/*    margin-top: 70px;*/
     color: #000;
 }
 
@@ -340,6 +337,12 @@ nav .profile {
     width: 90px;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+
 .big-text,
 .big-text-login {
     margin: 0 auto;
@@ -421,7 +424,6 @@ nav .profile {
     background: url("../img/BG.png") no-repeat center center fixed;
     background-size: cover;
     padding: 80px 0;
-    /*height: 90vh;*/
 }
 
 .plan h3 {
@@ -443,6 +445,7 @@ nav .profile {
     border-radius: 20px;
     padding: 20px;
     text-align: center;
+    width: 150px;
 }
 
 .plan .items .item img {
@@ -631,7 +634,7 @@ form .btn {
 .news-form {
     width: 30vw;
     margin: 0 auto;
-    margin-bottom: 80px;
+    padding-bottom: 20px;
 }
 
 .news .elem a,
@@ -954,12 +957,33 @@ footer hr {
         max-width: 90vw;
     }
 
+    body {
+        font-size: 12px;
+    }
+
     .container {
         min-width: 80vw;
     }
 
     .wrapper {
         padding: 40px 0;
+    }
+
+    .h1 {
+        font-size: 32px;
+    }
+
+    .h2 {
+        font-size: 32px;
+    }
+
+    .header1 .inline {
+        display: block;
+        gap: 5%;
+    }
+
+    .lavs-project {
+        width: 50px;
     }
 
     header {
@@ -1013,11 +1037,15 @@ footer hr {
         margin-top: 0;
     }
 
-    .hero--h2 {
-        margin-top: 120px;
+    .hero--h1 {
+        font-size: 38px;
     }
 
-    .hero--btn {
+    .hero--h2 {
+        font-size: 18px;
+    }
+
+    .flex-column span {
         margin: 0 auto;
     }
 
