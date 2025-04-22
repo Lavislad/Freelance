@@ -840,6 +840,20 @@ nav.profile ul li.active a::before {
     transform: 0;
 }
 
+.vacancies {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: clamp(18vw, 1080px, 90vw);
+    margin: 0 auto;
+}
+
+.vacancies .elem {
+    padding: 20px;
+    border: #ccc solid 1px;
+    border-radius: 20px;
+}
+
 /* Footer */
 
 footer {
