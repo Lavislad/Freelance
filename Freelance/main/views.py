@@ -6,18 +6,13 @@ from .models import Vacancy, Tags
 def index(request):
     data = {
         'title': 'Main Page',
-        'values': ['Sime', 'Hello', '123'],
-        'obj': {
-            'car': 'BMW',
-            'age': '28'
-        },
         'active': 'active'
     }
     return render(request, 'main/index.html', data)
 
 def vacancy_list(request):
     tag_slug = request.GET.get('tag')
-    vacancies = Vacancy.objects.all().prefetch_related('tags')
+    vacancies = Vacancy.objects.all().prefetch_related('tags').order_by('-date')
     all_tags = Tags.objects.all()
 
     if tag_slug:

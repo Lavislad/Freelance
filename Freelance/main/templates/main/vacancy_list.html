@@ -25,9 +25,11 @@
                     <h3>{{ vacancy.author.username }}</h3>
                     <p>{{ vacancy.description }}</p>
                     <h3>{{ vacancy.date }}</h3>
-                    {% for tag in vacancy.tags.all %}
-                    <span style="padding: 10px 20px; background: #ccc;">{{ tag.title }}</span>
-                    {% endfor %}
+                    <div class="tags">
+                        {% for tag in vacancy.tags.all %}
+                        <span class="tag">{{ tag.title }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
                 {% endfor %}
             </div>

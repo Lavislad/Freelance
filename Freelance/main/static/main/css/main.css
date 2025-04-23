@@ -850,26 +850,28 @@ nav.profile ul li.active a::before {
 
 .vacancies .elem {
     padding: 20px;
-    border: #ccc solid 1px;
     border-radius: 20px;
+    border: #f0f0f0 solid 1px;
+    box-shadow: 5px 5px 10px #ccc;
+/*    background: #fff;*/
 }
 
 .filters {
-    border: #070707 solid 1px;
     border-radius: 20px;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+/*    background: #fff;*/
 }
 
-.filters .tags span {
+.tags span {
     background: #f0f0f0;
     padding: 4px 10px;
     border-radius: 20px;
 }
 
-.filters .tags span.active {
+.tags span.active {
     background: #B9FF66;
 }
 
