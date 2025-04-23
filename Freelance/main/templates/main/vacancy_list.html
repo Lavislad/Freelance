@@ -9,15 +9,15 @@
             <span><a href="#" class="a">Create a vacancy</a></span>
         </div>
         <div class="vacancies container">
-            {% for el in vacancies %}
+            {% for vacancy in vacancies %}
             <div class="elem">
-                <h3>{{ el.title }}</h3>
-                <h3>{{ el.payment }}</h3>
-                <h3>{{ el.author.username }}</h3>
-                <p>{{ el.description }}</p>
-                <h3>{{ el.date }}</h3>
+                <h3>{{ vacancy.title }}</h3>
+                <h3>{{ vacancy.payment }}</h3>
+                <h3>{{ vacancy.author.username }}</h3>
+                <p>{{ vacancy.description }}</p>
+                <h3>{{ vacancy.date }}</h3>
                 {% for tag in vacancy.tags.all %}
-                <span>{{ tag.title }}</span>
+                <span style="padding: 10px 20px; background: #ccc;">{{ tag.title }}</span>
                 {% endfor %}
             </div>
             {% endfor %}
