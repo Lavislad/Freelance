@@ -17,10 +17,10 @@ def vacancy_list(request):
     all_tags = Tags.objects.all()
 
     if selected_tags:
-        q_objects = Q()
+        # q_objects = Q()
         for tag in selected_tags:
-            q_objects &= Q(tags__title=tag)
-        vacancies = vacancies.filter(q_objects).distinct()
+            vacancies = vacancies.filter(tags__title=tag).distinct()
+        # vacancies = vacancies.filter(q_objects).distinct()
 
     data = {
         'vacancies': vacancies,
