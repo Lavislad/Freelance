@@ -854,6 +854,25 @@ nav.profile ul li.active a::before {
     border-radius: 20px;
 }
 
+.filters {
+    border: #070707 solid 1px;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.filters .tags span {
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.filters .tags span.active {
+    background: #B9FF66;
+}
+
 /* Footer */
 
 footer {

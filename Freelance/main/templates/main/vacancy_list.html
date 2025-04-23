@@ -4,16 +4,18 @@
 
 {% block content %}
     <div class="wrapper">
-        <div class="inline">
+        <div class="inline container">
             <h1>These are vacancies we found</h1>
             <span><a href="#" class="a">Create a vacancy</a></span>
         </div>
         <div class="hero container">
             <div class="filters">
-                <a href="{% url 'vacancy_list' %}">All</a>
-                {% for tag in all_tags %}
-                <a href="?tag={{ tag.title }}">{{ tag.title }}</a>
-                {% endfor %}
+                <div class="tags">
+                    <a href="{% url 'vacancy_list' %}"><span class="{% if not current_tag %}active{% endif %}">All</span></a>
+                    {% for tag in all_tags %}
+                    <a href="?tag={{ tag.title }}"><span class="{% if current_tag == tag.title %}active{% endif %}">{{ tag.title }}</span></a>
+                    {% endfor %}
+                </div>
             </div>
             <div class="vacancies">
                 {% for vacancy in vacancies %}
