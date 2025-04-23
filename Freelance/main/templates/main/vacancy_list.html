@@ -8,19 +8,27 @@
             <h1>These are vacancies we found</h1>
             <span><a href="#" class="a">Create a vacancy</a></span>
         </div>
-        <div class="vacancies container">
-            {% for vacancy in vacancies %}
-            <div class="elem">
-                <h3>{{ vacancy.title }}</h3>
-                <h3>{{ vacancy.payment }}</h3>
-                <h3>{{ vacancy.author.username }}</h3>
-                <p>{{ vacancy.description }}</p>
-                <h3>{{ vacancy.date }}</h3>
-                {% for tag in vacancy.tags.all %}
-                <span style="padding: 10px 20px; background: #ccc;">{{ tag.title }}</span>
+        <div class="hero container">
+            <div class="filters">
+                <a href="{% url 'vacancy_list' %}">All</a>
+                {% for tag in all_tags %}
+                <a href="?tag={{ tag.title }}">{{ tag.title }}</a>
                 {% endfor %}
             </div>
-            {% endfor %}
+            <div class="vacancies">
+                {% for vacancy in vacancies %}
+                <div class="elem">
+                    <h3>{{ vacancy.title }}</h3>
+                    <h3>{{ vacancy.payment }}</h3>
+                    <h3>{{ vacancy.author.username }}</h3>
+                    <p>{{ vacancy.description }}</p>
+                    <h3>{{ vacancy.date }}</h3>
+                    {% for tag in vacancy.tags.all %}
+                    <span style="padding: 10px 20px; background: #ccc;">{{ tag.title }}</span>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
