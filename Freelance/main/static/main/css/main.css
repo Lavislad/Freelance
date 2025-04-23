@@ -324,7 +324,7 @@ nav .profile {
     color: #fff;
     box-shadow: 2px 2px 2px rgba(58, 58, 58, 0.5);
     cursor: pointer;
-    transition: all 300ms ease;
+    transition: all 200ms ease;
     display: inline-block;
     position: relative;
     bottom: 0;
@@ -334,10 +334,10 @@ nav .profile {
 .filters form button.accept {
     padding: 10px 25px;
     width: 100%;
-    box-shadow: none;
 }
 
-.hero--btn:hover {
+.hero--btn:focus,
+.filters form button.accept:focus {
     box-shadow: 0px 0px 0px rgba(58, 58, 58, 0.2);
     position: relative;
     left: 2px;
@@ -869,10 +869,11 @@ nav.profile ul li.active a::before {
 
 .filters {
     border-radius: 20px;
-    padding: 0 40px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 20%;
 /*    background: #fff;*/
 }
 
@@ -886,7 +887,6 @@ nav.profile ul li.active a::before {
     padding: 4px 10px;
     border-radius: 20px;
     display: inline-block;
-    margin-bottom: 5px;
 }
 
 .tags span.active {
@@ -899,9 +899,10 @@ nav.profile ul li.active a::before {
     border-radius: 20px;
     user-select: none;
     display: inline-block;
+    margin-bottom: 5px;
 }
 
-.filters form .tags input:checked {
+.filters form .tags label:has(input:checked) {
     background: #B9FF66;
 }
 
