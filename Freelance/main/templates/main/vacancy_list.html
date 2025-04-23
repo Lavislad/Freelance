@@ -16,6 +16,9 @@
                 <h3>{{ el.author.username }}</h3>
                 <p>{{ el.description }}</p>
                 <h3>{{ el.date }}</h3>
+                {% for tag in vacancy.tags.all %}
+                <span>{{ tag.title }}</span>
+                {% endfor %}
             </div>
             {% endfor %}
         </div>

@@ -1,5 +1,16 @@
 from django.contrib import admin
 from .models import Vacancy, Tags
 
-admin.site.register(Vacancy)
-admin.site.register(Tags)
+
+@admin.register(Tags)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+@admin.register(Vacancy)
+class VacancyAdmin(admin.ModelAdmin):
+    list_display = ('title', 'display_tags')
+
+    def display_tags(self, obj):
+        return ", ".join([tag.name for tag in obj.tags.all()])
+
+    display_tags.short_description = 'Теги'

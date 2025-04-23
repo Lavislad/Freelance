@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'main/index.html', data)
 
 def vacancy_list(request):
-    vacancies = Vacancy.objects.all().order_by('-date')
+    vacancies = Vacancy.objects.all().prefetch_related('tags')
     data = {
         'vacancies': vacancies,
     }
