@@ -845,7 +845,6 @@ nav.profile ul li.active a::before {
     flex-direction: column;
     gap: 25px;
     width: clamp(18vw, 1080px, 90vw);
-    margin: 0 auto;
 }
 
 .vacancies .elem {
@@ -869,6 +868,11 @@ nav.profile ul li.active a::before {
     background: #f0f0f0;
     padding: 4px 10px;
     border-radius: 20px;
+    display: inline-block;
+}
+
+.filters .tags span {
+    margin-bottom: 5px;
 }
 
 .tags span.active {
