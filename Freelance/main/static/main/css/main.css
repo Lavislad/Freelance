@@ -290,7 +290,8 @@ nav .profile {
 }
 
 .hero,
-.hero--profile {
+.hero--profile,
+.hero--vacancy-list {
     padding: 80px 0;
     margin-top: 60px;
     display: flex;
@@ -586,7 +587,6 @@ form .btn {
 }
 
 .news {
-    width: 100%;
     display: flex;
     justify-content: flex-start;
     gap: 1vw;
@@ -666,8 +666,7 @@ form .btn {
 }
 
 .news--details {
-    width: 100%;
-    margin: 50px auto;
+    padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
     gap: 15px;
@@ -745,6 +744,10 @@ form .btn {
 .news .elem h4 {
     font-weight: 500;
     font-size: 18px;
+}
+
+.feedback--details {
+    padding-bottom: 50px;
 }
 
 .feedback--details .elem {
@@ -867,7 +870,7 @@ nav.profile ul li.active a::before {
 /*    background: #fff;*/
 }
 
-.filters {
+.hero .filters {
     border-radius: 20px;
     padding: 0;
     display: flex;

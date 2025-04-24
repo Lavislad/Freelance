@@ -10,10 +10,12 @@
 <body>
     <div class="header1">
         <header class="container">
-            <div class="inline">
-                <span><a href="{% url 'index' %}"><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg" draggable="false"></a></span>
-                <span><img src="{% static 'main/img/lavs project white.jpg' %}" alt="" class="lavs-project"></span>
-            </div>
+            <a href="{% url 'index' %}">
+                <div class="inline">
+                    <span><img src="{% static 'main/img/Logo.png' %}" alt="" class="img-svg" draggable="false"></span>
+                    <span><img src="{% static 'main/img/lavs project white.jpg' %}" alt="" class="lavs-project"></span>
+                </div>
+            </a>
             <nav>
                 <button class="menu-btn">Menu</button>
                 <ul class="menu">

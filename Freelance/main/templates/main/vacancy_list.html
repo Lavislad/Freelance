@@ -5,9 +5,10 @@
 {% block content %}
     <div class="wrapper">
         <div class="inline container">
-            <h1>These are vacancies we found</h1>
+            <h1 class="h1">These are vacancies we found</h1>
             <span><a href="#" class="a">Create a vacancy</a></span>
         </div>
+        <hr style="margin: 20px 0;">
         <div class="hero container">
             <div class="filters">
                 <div>
@@ -25,7 +26,7 @@
                         <button type="submit" class="accept">Accept filters</button>
                     </form>
                 </div>
-                <a href="{% url 'vacancy_list' %}" class="reset">Reset All</a>
+                <a href="{% url 'vacancy_list' %}" class="reset" draggable="false">Reset All</a>
             </div>
             <div class="vacancies">
                 {% if vacancies %}

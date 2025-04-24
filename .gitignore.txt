@@ -1,0 +1,1 @@
+Freelance/main/__pycache__/views.cpython-313.pyc
