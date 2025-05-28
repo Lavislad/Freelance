@@ -639,7 +639,6 @@ form .btn {
 .news-form {
     width: 30vw;
     margin: 0 auto;
-    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
