@@ -8,9 +8,9 @@
             <h1 class="h1">Feedbacks</h1>
             <span><a href="{% url 'create_feedback' %}" class="a">Create a feedback</a></span>
         </div>
-        <hr style="margin: 20px 0;">
+        <hr style="margin-top: 20px;">
         {% if feedback %}
-            <div class="feedback container">
+            <div class="feedback container hero--padding">
                 {% for el in feedback %}
                 <div class="elem">
                     <div class="inline">
