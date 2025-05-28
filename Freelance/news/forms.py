@@ -9,12 +9,12 @@ class ArticlesForm(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'placeholder': 'Title'
+                'id': 'title'
             }),
             'anons': TextInput(attrs={
-                'placeholder': 'Anons'
+                'id': 'anons'
             }),
             'full_text': Textarea(attrs={
-                'placeholder': 'Text'
+                'id': 'full_text'
             })
         }

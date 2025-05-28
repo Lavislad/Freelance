@@ -6,7 +6,7 @@
     <div class="wrapper">
         <div class="inline container">
             <h1 class="h1">Feedbacks</h1>
-            <span><a href="{% url 'create_feedback' %}" class="a">Create a feedback</a></span>
+            <span><a href="{% if user.is_authenticated %}{% url 'create_feedback' %}{% else %}{% url 'login' %}{% endif %}" class="a">Create a feedback</a></span>
         </div>
         <hr style="margin-top: 20px;">
         {% if feedback %}
