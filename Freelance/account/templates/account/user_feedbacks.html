@@ -1,24 +1,13 @@
-{% extends 'main/layout.html' %}
+{% extends 'account/profile_layout.html' %}
 {% load static %}
 {% block title %}Profile{% endblock %}
+{% block page_title %}Your Feedbacks{% endblock %}
 {% block content %}
-
-    <header class="profile">
-        <nav class="profile profile-container">
-            <ul>
-                <li class=""><a href="{% url 'profile' %}">Account Info</a></li>
-                <li class="active"><a href="">Your Feedbacks</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <div class="wrapper" style="min-height: 90vh; padding: 0">
         {% if feedback %}
         <div class="feedback container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h1>Your Feedbacks</h1>
-                <a href="{% url 'create_feedback' %}" class="a">Create a feedback</a>
-            </div>
+        <a href="{% url 'create_feedback' %}" class="a">Create a feedback</a>
         {% for i in feedback %}
             <div class="elem">
                     <div class="inline">

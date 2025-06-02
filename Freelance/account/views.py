@@ -47,11 +47,15 @@ def logout(request):
     return redirect('index')
 
 def profile(request):
-    return render(request, 'account/profile.html')
+    data = {
+        'title': 'Account Info'
+    }
+    return render(request, 'account/profile.html', data)
 
 def user_feedbacks(request):
     feedback = Feedback.objects.filter(author_id = request.user.id).all().order_by('-date')
     data = {
-        'feedback': feedback
+        'feedback': feedback,
+        'title': 'Your Feedbacks'
     }
     return render(request, 'account/user_feedbacks.html', data)

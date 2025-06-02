@@ -1,0 +1,12 @@
+    <header class="profile">
+            <div class="profile-header container">
+            <h1 class="h1">{{ title }}</h1>
+            <nav class="profile profile-container">
+                <ul>
+                    <li class="{% if title == 'Account Info' %}active{% endif %}"><a href="{% url 'profile' %}">Account Info</a></li>
+                    <li class="{% if title == 'Your Feedbacks' %}active{% endif %}"><a href="{% url 'user_feedbacks' %}">Your Feedbacks</a></li>
+                    <li class="{% if title == 'Your Vacancies' %}active{% endif %}"><a href="{% url 'user_vacancies' %}">Your Vacancies</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
