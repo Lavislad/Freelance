@@ -4,8 +4,8 @@ from .models import User
 from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib import auth
 from django.urls import reverse
-
 from feedback.models import Feedback
+from main.models import Vacancy
 
 
 def login(request):
@@ -61,4 +61,9 @@ def user_feedbacks(request):
     return render(request, 'account/user_feedbacks.html', data)
 
 def user_vacancies(request):
-    return render(request, 'account/user_vacancies.html')
+    vacancies = Vacancy.objects.filter(author_id = request.user.id).all().order_by('-date')
+    data = {
+        'title': 'Your Vacancies',
+        'vacancies': vacancies
+    }
+    return render(request, 'account/user_vacancies.html', data)

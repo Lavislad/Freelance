@@ -1,26 +1,25 @@
-{% extends 'account/profile_layout.html' %}
+{% extends 'main/layout.html' %}
 {% load static %}
 {% block title %}Profile{% endblock %}
-{% block page_title %}Your Feedbacks{% endblock %}
 {% block content %}
     {% include 'account/profile_layout.html' %}
     <div class="wrapper" style="min-height: 90vh; padding: 0">
-        {% if vacancy %}
+        {% if vacancies %}
         <div class="feedback container">
-        <a href="{% url 'create_feedback' %}" class="a">Create a feedback</a>
-        {% for i in feedback %}
+        <a href="{% url 'vacancy_create' %}" class="a">Create a Vacancy</a>
+        {% for vacancy in vacancies %}
             <div class="elem">
                     <div class="inline">
                         <img src="{{ user.image.url }}" alt="" class="user_avatar">
-                        <h4>{{ i.author.username }}</h4>
-                        <h4 class="date">{{ i.date }}</h4>
+                        <h4>{{ vacancy.author.username }}</h4>
+                        <h4 class="date">{{ vacancy.date }}</h4>
                     </div>
-                    <a href='{% url "feedback_details" i.id %}'><h3>{{ i.title }}</h3></a>
-                    <p>{{ i.full_text }}</p>
+                    <a href='{% url "feedback_details" vacancy.id %}'><h3>{{ vacancy.title }}</h3></a>
+                    <p>{{ vacancy.description }}</p>
                 </div>
         {% endfor %}
         {% else %}
-        <h2>You have no feedbacks</h2>
+        <h2>You have no vacancies</h2>
         {% endif %}
         </div>
     </div>
