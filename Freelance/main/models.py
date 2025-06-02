@@ -18,7 +18,7 @@ class Vacancy(models.Model):
     payment = models.CharField()
     description = models.TextField(max_length=1500)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tags, related_name='vacancies', verbose_name='Теги')
 
     def __str__(self):

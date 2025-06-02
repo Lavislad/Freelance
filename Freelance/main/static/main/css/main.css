@@ -920,6 +920,20 @@ nav.profile ul li.active a::before {
     font-size: 18px;
 }
 
+.news-form select {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 20px;
+    outline: none;
+    border: #070707 1px solid;
+}
+
+.news-form select option {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 /* Footer */
 
