@@ -59,3 +59,6 @@ def user_feedbacks(request):
         'title': 'Your Feedbacks'
     }
     return render(request, 'account/user_feedbacks.html', data)
+
+def user_vacancies(request):
+    return render(request, 'account/user_vacancies.html')

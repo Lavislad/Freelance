@@ -817,22 +817,16 @@ header.profile {
 }
 
 .profile-header * {
-    width: 100%;
-}
-
-nav.profile {
-    width: 100%;
+    width: fit-content;
 }
 
 nav.profile ul {
     list-style: none;
     align-items: center;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     gap: 2vw;
     width: fit-content;
-    margin-left: calc(250px + 4vw);
 }
 
 nav.profile ul li {
@@ -840,6 +834,8 @@ nav.profile ul li {
     padding: 5px 12px;
     transition: 300ms;
     border-radius: 10px;
+    cursor: pointer;
+    width: fit-content;
 }
 
 nav.profile ul li:hover {

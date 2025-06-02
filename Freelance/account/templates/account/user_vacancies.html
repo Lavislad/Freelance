@@ -5,7 +5,7 @@
 {% block content %}
     {% include 'account/profile_layout.html' %}
     <div class="wrapper" style="min-height: 90vh; padding: 0">
-        {% if feedback %}
+        {% if vacancy %}
         <div class="feedback container">
         <a href="{% url 'create_feedback' %}" class="a">Create a feedback</a>
         {% for i in feedback %}
