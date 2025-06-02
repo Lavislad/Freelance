@@ -9,9 +9,9 @@ class FeedbackForm(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'placeholder': 'Title'
+                'id': 'title'
             }),
             'full_text': Textarea(attrs={
-                'placeholder': 'Text'
+                'id': 'text'
             })
         }

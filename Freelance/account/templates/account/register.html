@@ -1,75 +1,84 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-{% block title %}Log in{% endblock %}
+{% block title %}Register{% endblock %}
 {% block content %}
-    <div class="wrapper p-120">
-        <div class="big-text-register container">
-            <h3>Register</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis id cum in illum consectetur dicta non nobis molestias voluptates iusto earum minus similique cumque facilis, maiores odit totam asperiores eveniet!</p>
-        </div>
-        <div class="hero--register">
-            <form class="elem" action="{% url 'register' %}" method="post">
-                {% csrf_token %}
-                <div class="form-inline">
+    <div class="wrapper">
+        <h1 class="h1">Register</h1>
+        <hr style="margin-top: 20px;">
+        <div class="hero--padding">
+            <div class="hero--register">
+                <form class="elem" action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-inline">
+                        <div>
+                            <label for="id_first_name">Your first name</label>
+                            <input type="text"
+                                    id="id_first_name"
+                                    name="first_name"
+                                    value="" required>
+                            {% if form.first_name.errors %}
+                            <p class="registration--error">{{ form.first_name.errors }}</p>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <label for="id_last_name">Your last name</label>
+                            <input type="text"
+                                    id="id_last_name"
+                                    name="last_name"
+                                    value="" required>
+                            {% if form.last_name.errors %}
+                            <p class="registration--error">{{ form.last_name.errors }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
                     <div>
-                        <label for="id_first_name">Your first name</label>
-                        <input type="text" placeholder="First name"
-                                id="id_first_name"
-                                name="first_name"
+                        <label for="id_username">Enter username</label>
+                        <input type="text"
+                                id="id_username"
+                                name="username"
                                 value="" required>
-                        {% if form.first_name.errors %}
-                        <p class="registration--error">{{ form.first_name.errors }}</p>
+                        {% if form.username.errors %}
+                        <p class="registration--error">{{ form.username.errors }}</p>
                         {% endif %}
                     </div>
                     <div>
-                        <label for="id_last_name">Your last name</label>
-                        <input type="text" placeholder="Last name"
-                                id="id_last_name"
-                                name="last_name"
+                        <label for="id_email">Enter email</label>
+                        <input type="email"
+                                id="id_email"
+                                name="email"
                                 value="" required>
-                        {% if form.last_name.errors %}
-                        <p class="registration--error">{{ form.last_name.errors }}</p>
+                        {% if form.email.errors %}
+                        <p class="registration--error">{{ form.email.errors }}</p>
                         {% endif %}
                     </div>
-                </div>
-                <label for="id_username">Enter username</label>
-                <input type="text" placeholder="Username"
-                        id="id_username"
-                        name="username"
-                        value="" required>
-                {% if form.username.errors %}
-                <p class="registration--error">{{ form.username.errors }}</p>
-                {% endif %}
-
-                <label for="id_email">Enter email</label>
-                <input type="email" placeholder="Email"
-                        id="id_email"
-                        name="email"
-                        value="" required>
-                {% if form.email.errors %}
-                <p class="registration--error">{{ form.email.errors }}</p>
-                {% endif %}
-
-                <label for="id_password1">Enter password</label>
-                <input type="password" placeholder="Password"
-                        id="id_password1"
-                        name="password1"
-                        value="" required>
-                {% if form.password1.errors %}
-                <p class="registration--error">{{ form.password1.errors }}</p>
-                {% endif %}
-
-                <label for="id_password2">Confirm password</label>
-                <input type="password" placeholder="Password"
-                        id="id_password2"
-                        name="password2"
-                        value="" required>
-                {% if form.password2.errors %}
-                <p class="registration--error">{{ form.password2.errors }}</p>
-                {% endif %}
-                <button class="btn">Register</button>
-                <p>Already have an account? <span><a href="{% url 'login' %}">Log in</a></span></p>
-            </form>
+                    <div>
+                        <label for="id_password1">Enter password</label>
+                        <input type="password"
+                                id="id_password1"
+                                name="password1"
+                                value="" required>
+                        {% if form.password1.errors %}
+                        <p class="registration--error">{{ form.password1.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <label for="id_password2">Confirm password</label>
+                        <input type="password"
+                                id="id_password2"
+                                name="password2"
+                                value="" required>
+                        {% if form.password2.errors %}
+                        <p class="registration--error">{{ form.password2.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="inline-start">
+                        <input type="checkbox" class="checkbox">
+                        <p>I want to receive a newsletter of advertising and informational messages</p>
+                    </div>
+                    <button class="btn">Register</button>
+                    <p class="text">Already have an account? <span><a href="{% url 'login' %}">Log in</a></span></p>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}

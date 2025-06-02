@@ -1,0 +1,2 @@
+Freelance/main/__pycache__/
+Freelance/feedback/__pycache__/

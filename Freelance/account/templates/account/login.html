@@ -10,10 +10,14 @@
         <div class="hero--login container">
             <form method="post" class="elem">
                 {% csrf_token %}
-                <label>Enter username</label>
-                {{ form.username }}
-                <label>Enter password</label>
-                {{ form.password }}
+                <div>
+                    <label>Enter username</label>
+                    {{ form.username }}
+                </div>
+                <div>
+                    <label>Enter password</label>
+                    {{ form.password }}
+                </div>
 <!--                <textarea placeholder="Email"></textarea>-->
 <!--                <textarea placeholder="Password"></textarea>-->
                 <button class="btn" autofocus>Log in</button>

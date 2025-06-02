@@ -4,10 +4,10 @@
 
 {% block content %}
     <div class="wrapper">
-        <h1 class="h1">Check the news</h1>
-        <hr style="margin: 20px 0;">
+        <div class="container"><h1 class="h1" style="text-align: left;">Check the news</h1></div>
+        <hr style="margin-top: 20px;">
         {% if news %}
-        <div class="news container">
+        <div class="news container hero--padding">
             {% for el in news %}
             <div class="elem">
                 <div class="inline">
@@ -26,10 +26,18 @@
         <h2 class="h2 h2--feedback">Create the news</h2>
         <form method="post" class="news-form">
             {% csrf_token %}
-            {{ form.title }}
-            {{ form.anons }}
-            {{ form.full_text }}
-            {{ form.date }}
+            <div>
+                <label for="title">Enter title</label>
+                {{ form.title }}
+            </div>
+            <div>
+                <label for="anons">Enter anons</label>
+                {{ form.anons }}
+            </div>
+            <div>
+                <label for="full_text">Enter text</label>
+                {{ form.full_text }}
+            </div>
             <button class="btn" type="submit">Submit</button>
             <p>{{ error }}</p>
         </form>

@@ -1,0 +1,53 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="inline container">
+            <h1 class="h1">These are vacancies we found</h1>
+            <span><a href="{% url 'vacancy_create' %}" class="a">Create a vacancy</a></span>
+        </div>
+        <hr style="margin: 20px 0;">
+        <div class="hero container">
+            <div class="filters">
+                <div>
+                    <h3>Tags</h3>
+                    <form action="{% url 'vacancy_list' %}" method="get">
+                        <div class="tags">
+<!--                            <a href="{% url 'vacancy_list' %}"><span class="{% if not selected_tags %}active{% endif %} all">All</span></a>-->
+                            {% for tag in all_tags %}
+                            <label>
+                                <input type="checkbox" name="tags" value="{{ tag.title }}" {% if tag.title in selected_tags %}checked{% endif %}>
+                                <span>{{ tag.title }}</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                        <button type="submit" class="accept">Accept filters</button>
+                    </form>
+                </div>
+                <a href="{% url 'vacancy_list' %}" class="reset" draggable="false">Reset All</a>
+            </div>
+            <div class="vacancies">
+                {% if vacancies %}
+                {% for vacancy in vacancies %}
+                <div class="elem">
+                    <h3>{{ vacancy.title }}</h3>
+                    <h3>{{ vacancy.payment }}</h3>
+                    <h3>{{ vacancy.author.username }}</h3>
+                    <p>{{ vacancy.description }}</p>
+                    <h3>{{ vacancy.date }}</h3>
+                    <div class="tags">
+                        {% for tag in vacancy.tags.all %}
+                        <span>{{ tag.title }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <h1>There is no vacancies yet</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
