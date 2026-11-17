@@ -1,5 +1,0 @@
-services:
-  prod:
-    build: ./
-    ports:
-      - "80:80"
